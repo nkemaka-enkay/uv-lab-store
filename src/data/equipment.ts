@@ -3,688 +3,410 @@ export interface Equipment {
   name: string;
   category: string;
   price: number;
-  image: string;
   shortDescription: string;
   fullDescription: string;
   specs: string[];
+  image: string;
 }
 
 export const EQUIPMENT_LIST: Equipment[] = [
-  // --- MICROCONTROLLERS & BOARDS ---
+  // --- MICROCONTROLLERS & DEVELOPMENT BOARDS ---
   {
-    id: "arduino-mega",
-    name: "Arduino Mega 2560 Board",
-    category: "Microcontrollers",
-    price: 9500,
-    image: "/images/arduino-mega.jpg",
-    shortDescription: "ATmega2560 microcontroller board for complex automation projects.",
-    fullDescription: "High-capacity microcontroller featuring 54 digital I/O pins, 16 analog inputs, 4 UARTs, and 256 KB flash memory.",
-    specs: ["Microcontroller: ATmega2560", "Digital I/O: 54 pins", "Flash Memory: 256 KB"]
+    id: 'arduino-uno',
+    name: 'Arduino Uno R3',
+    category: 'Microcontrollers',
+    price: 6500,
+    shortDescription: 'ATmega328P based microcontroller board for prototyping.',
+    fullDescription: 'The Arduino Uno R3 is the staple development board for electronics and robotics projects, featuring 14 digital I/O pins and 6 analog inputs.',
+    specs: ['Microcontroller: ATmega328P', 'Operating Voltage: 5V', 'Digital I/O Pins: 14', 'Analog Inputs: 6'],
+    image: '/arduino_uno.jpg'
   },
   {
-    id: "arduino-nano",
-    name: "Arduino Nano Board",
-    category: "Microcontrollers",
-    price: 3500,
-    image: "/images/arduino-nano.jpg",
-    shortDescription: "Compact breadboard-friendly microcontroller board.",
-    fullDescription: "ATmega328P-based miniature board designed for breadboard prototyping and compact electronic systems.",
-    specs: ["Microcontroller: ATmega328P", "Digital I/O: 14 pins", "Form Factor: Mini Breadboard"]
+    id: 'arduino-uno-headers',
+    name: 'Arduino Uno with Soldered Headers',
+    category: 'Microcontrollers',
+    price: 7000,
+    shortDescription: 'Arduino Uno R3 pre-soldered with pin headers.',
+    fullDescription: 'Ready-to-use Arduino Uno board with pre-soldered pin headers for immediate breadboard or jumper wire connection.',
+    specs: ['ATmega328P', 'Pre-soldered headers', '5V operating voltage'],
+    image: '/arduino_uno_with.jpg'
   },
   {
-    id: "esp32",
-    name: "ESP32 Wi-Fi + Bluetooth Board",
-    category: "Wireless & IoT",
+    id: 'arduino-mega',
+    name: 'Arduino Mega 2560',
+    category: 'Microcontrollers',
+    price: 12000,
+    shortDescription: 'High pin-count microcontroller board for large projects.',
+    fullDescription: 'Designed for complex projects requiring extra I/O lines, 54 digital pins, and 16 analog inputs.',
+    specs: ['Microcontroller: ATmega2560', 'Digital Pins: 54', 'Analog Inputs: 16', 'Flash Memory: 256 KB'],
+    image: '/arduino_mega.jpg'
+  },
+  {
+    id: 'arduino-nano-with',
+    name: 'Arduino Nano (With Headers)',
+    category: 'Microcontrollers',
     price: 4500,
-    image: "/images/esp32.jpg",
-    shortDescription: "Dual-core Wi-Fi & Bluetooth MCU module for IoT solutions.",
-    fullDescription: "High-performance ESP32 development board featuring integrated Wi-Fi, Bluetooth LE, and dual-core processing.",
-    specs: ["Connectivity: Wi-Fi & BLE", "CPU: Xtensa Dual-Core 32-bit", "Operating Voltage: 3.3V"]
+    shortDescription: 'Compact ATmega328 board pre-soldered for breadboards.',
+    fullDescription: 'Breadboard-friendly microcontroller with pre-soldered pin headers, ideal for compact DIY robotics.',
+    specs: ['ATmega328P', 'Mini-USB connection', 'Pre-soldered headers'],
+    image: '/Arduino_nano_with.jpg'
   },
   {
-    id: "esp32-cam",
-    name: "ESP32-CAM Board with OV2640",
-    category: "Wireless & IoT",
+    id: 'arduino-nano-without',
+    name: 'Arduino Nano (Unsoldered)',
+    category: 'Microcontrollers',
+    price: 4000,
+    shortDescription: 'Compact ATmega328 board without headers.',
+    fullDescription: 'Compact Arduino board supplied without soldered headers for low-profile soldering or custom mounting.',
+    specs: ['ATmega328P', 'Unsoldered pin headers', 'Compact footprint'],
+    image: '/Arduino_nano_without.jpg'
+  },
+  {
+    id: 'esp32-devkit',
+    name: 'ESP32 Wi-Fi + Bluetooth Board',
+    category: 'Microcontrollers',
     price: 5500,
-    image: "/images/esp32-cam.jpg",
-    shortDescription: "Compact camera development module with Wi-Fi and Bluetooth.",
-    fullDescription: "ESP32-CAM module supporting image transmission, facial recognition, and micro SD card slot.",
-    specs: ["Camera: OV2640 2MP", "Wireless: Wi-Fi + Bluetooth", "Storage: MicroSD Slot"]
+    shortDescription: 'Dual-core MCU with built-in Wi-Fi & Bluetooth.',
+    fullDescription: 'Powerful 32-bit dual-core microcontroller featuring built-in Wi-Fi and Bluetooth BLE for IoT applications.',
+    specs: ['Dual-core Xtensa LX6', 'Wi-Fi 802.11 b/g/n', 'Bluetooth v4.2 BR/EDR & BLE', '30 GPIO pins'],
+    image: '/esp32.jpg'
   },
   {
-    id: "esp8266-nodemcu",
-    name: "ESP8266 NodeMCU Board",
-    category: "Wireless & IoT",
-    price: 3500,
-    image: "/images/nodemcu.jpg",
-    shortDescription: "Open-source Wi-Fi development board for IoT projects.",
-    fullDescription: "Integrated ESP8266 module with USB interface, ideal for quick smart home and Wi-Fi embedded projects.",
-    specs: ["Wi-Fi Standard: 802.11 b/g/n", "Flash Memory: 4MB", "Interface: Micro-USB"]
+    id: 'esp32-cam',
+    name: 'ESP32-CAM Board with OV2640',
+    category: 'Microcontrollers',
+    price: 6500,
+    shortDescription: 'ESP32 camera development board with SD card slot.',
+    fullDescription: 'Compact camera board combining the ESP32 chip with an OV2640 camera module and MicroSD storage support.',
+    specs: ['OV2640 Camera included', 'MicroSD Slot', 'Wi-Fi Video Streaming support'],
+    image: '/esp32_cam.jpg'
   },
   {
-    id: "esp-01e",
-    name: "ESP-01E Wi-Fi Transceiver",
-    category: "Wireless & IoT",
-    price: 2000,
-    image: "/images/esp-01e.jpg",
-    shortDescription: "Ultracompact serial-to-Wi-Fi transceiver module.",
-    fullDescription: "Miniature Wi-Fi module enabling serial communication over local wireless networks.",
-    specs: ["Standard: 802.11 b/g/n", "Operating Voltage: 3.3V", "Interface: UART"]
+    id: 'esp8266-nodemcu',
+    name: 'NodeMCU ESP8266 Wi-Fi Module',
+    category: 'Microcontrollers',
+    price: 4500,
+    shortDescription: 'Open-source Wi-Fi development board for IoT.',
+    fullDescription: 'Popular LUA-based firmware board powered by the ESP8266 Wi-Fi chip for smart home and wireless projects.',
+    specs: ['ESP-12E Module', 'Integrated Wi-Fi', 'Micro-USB power & programming'],
+    image: '/esp8266.jpg'
+  },
+  {
+    id: 'raspberry-pi-pico',
+    name: 'Raspberry Pi Pico',
+    category: 'Microcontrollers',
+    price: 5000,
+    shortDescription: 'RP2040 dual-core ARM Cortex-M0+ microcontroller board.',
+    fullDescription: 'High-performance microcontroller board built on Raspberry Pi designed RP2040 chip.',
+    specs: ['RP2040 Dual-core', '264KB SRAM', '2MB Flash Memory'],
+    image: '/raspberry_pi_pico.jpg'
+  },
+  {
+    id: 'raspberry-pi-4-kit',
+    name: 'Raspberry Pi 4 Model B Kit',
+    category: 'Microcontrollers',
+    price: 55000,
+    shortDescription: 'Complete single-board computer kit.',
+    fullDescription: 'Full computing power for IoT gateways, computer vision, and robotics processing.',
+    specs: ['Quad-core 1.5GHz CPU', '4GB RAM', 'Dual Micro-HDMI output'],
+    image: '/raspberry_pi_Model_4 kit.jpg'
+  },
+  {
+    id: 'raspberry-pi-b-plus',
+    name: 'Raspberry Pi Model B+',
+    category: 'Microcontrollers',
+    price: 28000,
+    shortDescription: 'Classic Linux single-board computer.',
+    fullDescription: 'Single-board computer featuring 40 GPIO pins, 4 USB ports, and full HDMI connectivity.',
+    specs: ['40-pin GPIO header', '4 USB 2.0 ports', 'Full-size HDMI'],
+    image: '/raspberry_pi_Model_B+.jpg'
   },
 
-  // --- COMMUNICATION & WIRELESS ---
+  // --- SENSORS & BIOMETRICS ---
   {
-    id: "gsm-900a-big",
-    name: "GSM 900A / SIM900 Module",
-    category: "Wireless & IoT",
-    price: 8500,
-    image: "/images/gsm-900a.jpg",
-    shortDescription: "Dual-band GSM/GPRS module for cellular communication.",
-    fullDescription: "Allows microcontrollers to send SMS messages, handle voice calls, and connect to GPRS networks.",
-    specs: ["Band: Dual-Band 900/1800 MHz", "Interface: UART", "Functions: SMS, Voice, GPRS"]
+    id: 'hc-sr04',
+    name: 'HC-SR04 Ultrasonic Distance Sensor',
+    category: 'Sensors & Modules',
+    price: 1500,
+    shortDescription: 'Non-contact distance measurement module (2cm - 400cm).',
+    fullDescription: 'Provides precise distance measurement from 2cm to 400cm with high precision and stable readings.',
+    specs: ['Working Voltage: 5V DC', 'Ranging Distance: 2cm – 400cm', 'Measuring Angle: 15 degrees'],
+    image: '/hc_sr04.jpg'
   },
   {
-    id: "gsm-sim800c-800l",
-    name: "GSM SIM800 / SIM800L Module",
-    category: "Wireless & IoT",
-    price: 4500,
-    image: "/images/sim800l.jpg",
-    shortDescription: "Compact cellular GSM/GPRS transceiver module.",
-    fullDescription: "Ultra-small cellular module providing text messaging and data transmission capability.",
-    specs: ["Quad-Band: 850/900/1800/1900MHz", "SIM Size: Micro SIM", "Operating Voltage: 3.7V - 4.2V"]
+    id: 'dht11-sensor',
+    name: 'DHT11 Temperature & Humidity Sensor',
+    category: 'Sensors & Modules',
+    price: 1500,
+    shortDescription: 'Digital temperature and humidity measurement module.',
+    fullDescription: 'Composite sensor offering calibrated digital signal output for ambient temperature and humidity tracking.',
+    specs: ['Humidity Range: 20-90% RH', 'Temperature Range: 0-50°C', 'Signal: Digital output'],
+    image: '/DHT-11.jpg'
   },
   {
-    id: "gsm-gps-sim800",
-    name: "GSM/GPS GPRS SIM800 Combo Board",
-    category: "Wireless & IoT",
-    price: 11000,
-    image: "/images/sim800-gps.jpg",
-    shortDescription: "Combined cellular communication and GPS positioning module.",
-    fullDescription: "All-in-one board providing real-time location tracking alongside GSM cellular transmission.",
-    specs: ["Features: GSM + GPS + GPRS", "Interface: Serial UART", "Antenna: Dual GSM/GPS Included"]
+    id: 'dht22-sensor',
+    name: 'DHT22 High-Precision Temp & Humidity Sensor',
+    category: 'Sensors & Modules',
+    price: 3500,
+    shortDescription: 'Precision digital temperature and humidity sensor.',
+    fullDescription: 'Higher precision version of the DHT sensor with wider measurement range and better accuracy.',
+    specs: ['Humidity Range: 0-100% RH', 'Temperature Range: -40 to 80°C', 'High Precision'],
+    image: '/DHT-22.jpg'
   },
   {
-    id: "gps-neo-7",
-    name: "GPS NEO-7M Module",
-    category: "Sensors & Positioning",
-    price: 6000,
-    image: "/images/gps-neo-7.jpg",
-    shortDescription: "High-accuracy satellite positioning module with antenna.",
-    fullDescription: "NEO-7M positioning engine delivering high precision location tracking for navigation systems.",
-    specs: ["Channels: 56 Channels", "Update Rate: Up to 10 Hz", "Interface: UART"]
+    id: 'pir-motion-sensor',
+    name: 'PIR Motion Sensor Module',
+    category: 'Sensors & Modules',
+    price: 2000,
+    shortDescription: 'Pyroelectric infrared motion detection module.',
+    fullDescription: 'Detects human motion by sensing infrared radiation emitted from human bodies.',
+    specs: ['Detection Range: up to 7m', 'Adjustable Delay Time', 'Operating Voltage: 4.5V - 20V'],
+    image: '/PIR_Motion.jpg'
   },
   {
-    id: "nrfl2401-combo",
-    name: "nRF24L01 Wireless Transceiver (Standard / Long Range)",
-    category: "Wireless & IoT",
+    id: 'fingerprint-sensor',
+    name: 'Optical Fingerprint Scanner Sensor',
+    category: 'Sensors & Modules',
+    price: 14000,
+    shortDescription: 'Biometric optical fingerprint scanner with UART interface.',
+    fullDescription: 'High-performance optical biometric sensor for access control systems and security locking devices.',
+    specs: ['Interface: UART/Serial', 'Optical Sensor', 'On-board flash storage'],
+    image: '/Fingerprint.jpg'
+  },
+  {
+    id: 'mq-gas-sensor',
+    name: 'MQ Gas & Air Quality Sensor',
+    category: 'Sensors & Modules',
     price: 2500,
-    image: "/images/nrf24l01.jpg",
-    shortDescription: "2.4GHz RF wireless communication module with power amplifier support.",
-    fullDescription: "High-speed 2.4GHz RF transceiver module for multi-device wireless communication and telemetry.",
-    specs: ["Frequency: 2.4 GHz ISM Band", "Data Rate: Up to 2 Mbps", "Interface: SPI"]
+    shortDescription: 'Analog gas sensor for air quality and leak detection.',
+    fullDescription: 'Detects combustible gases and smoke in the surrounding atmosphere with dual digital/analog outputs.',
+    specs: ['Analog & Digital Outputs', 'High sensitivity', 'Adjustable threshold potentiometer'],
+    image: '/MQ_Gas.jpg'
   },
   {
-    id: "rfid-sensor",
-    name: "RC522 RFID Reader Module with Card & Tag",
-    category: "Wireless & IoT",
+    id: 'flame-sensor',
+    name: 'Infrared Flame Sensor Module',
+    category: 'Sensors & Modules',
+    price: 1500,
+    shortDescription: 'Detects fire and light sources between 760nm - 1100nm.',
+    fullDescription: 'Sensitive to fire wavelengths for automatic fire alarm and detection systems.',
+    specs: ['Detection Wavelength: 760nm - 1100nm', 'Detection Angle: 60 degrees'],
+    image: '/Flame.jpg'
+  },
+  {
+    id: 'infrared-sensor',
+    name: 'IR Obstacle Avoidance Sensor',
+    category: 'Sensors & Modules',
+    price: 1200,
+    shortDescription: 'Infrared line tracking and obstacle detection sensor.',
+    fullDescription: 'Infrared transmitter/receiver pair for smart car obstacle avoidance and line following.',
+    specs: ['Detection Distance: 2cm - 30cm', 'Operating Voltage: 3.3V - 5V'],
+    image: '/Infrared_Sensor.jpg'
+  },
+  {
+    id: 'ph-sensor-kit',
+    name: 'Analog pH Sensor Probe Kit',
+    category: 'Sensors & Modules',
+    price: 18000,
+    shortDescription: 'Liquid pH value testing sensor kit for water quality monitoring.',
+    fullDescription: 'Complete liquid pH testing probe and signal conditioning board for water quality analysis.',
+    specs: ['Measurement Range: pH 0-14', 'BNC Connector Probe', 'Analog Signal Output Board'],
+    image: '/pH_Sensor.jpg'
+  },
+  {
+    id: 'soil-moisture-sensor',
+    name: 'Soil Moisture Sensor Module',
+    category: 'Sensors & Modules',
+    price: 1500,
+    shortDescription: 'Soil humidity sensor for automated plant watering systems.',
+    fullDescription: 'Measures volumetric water content in soil for smart agricultural projects.',
+    specs: ['Analog & Digital Output', 'Corrosion-resistant probe'],
+    image: '/Soil_Moisture.jpg'
+  },
+  {
+    id: 'mpu6050-gyro',
+    name: 'MPU6050 6-DOF Accelerometer & Gyro',
+    category: 'Sensors & Modules',
     price: 2500,
-    image: "/images/rfid-rc522.jpg",
-    shortDescription: "13.56MHz contactless RFID reader module.",
-    fullDescription: "Compact RFID access control reader including key fob and card for security identification systems.",
-    specs: ["Frequency: 13.56 MHz", "Protocol: SPI", "Operating Voltage: 3.3V"]
+    shortDescription: '6-axis motion tracking sensor with I2C bus.',
+    fullDescription: '3-axis gyroscope and 3-axis accelerometer combined on a single chip with digital motion processing.',
+    specs: ['Interface: I2C', '3-Axis Gyroscope', '3-Axis Accelerometer'],
+    image: '/MPU6050.jpg'
+  },
+  {
+    id: 'sound-sensor',
+    name: 'Acoustic Sound Detection Sensor',
+    category: 'Sensors & Modules',
+    price: 1500,
+    shortDescription: 'Microphone sound intensity detection sensor module.',
+    fullDescription: 'Detects ambient sound levels for clap switches or audio monitoring.',
+    specs: ['Electret microphone', 'Adjustable gain threshold'],
+    image: '/Sound.jpg'
   },
 
   // --- DISPLAYS ---
   {
-    id: "lcd-1602-i2c",
-    name: "LCD1602 Display with I2C Module",
-    category: "Displays",
-    price: 3000,
-    image: "/images/lcd1602.jpg",
-    shortDescription: "16x2 character alphanumeric display with 2-wire I2C interface.",
-    fullDescription: "Blue/Green backlit LCD showing 16 characters across 2 lines with easy 2-pin I2C setup.",
-    specs: ["Characters: 16x2", "Interface: I2C", "Operating Voltage: 5V"]
-  },
-  {
-    id: "lcd-2004-i2c",
-    name: "LCD2004 Display with I2C Module",
-    category: "Displays",
-    price: 4500,
-    image: "/images/lcd2004.jpg",
-    shortDescription: "20x4 character alphanumeric display with I2C interface.",
-    fullDescription: "Large 20-character by 4-line LCD screen for displaying extensive system data.",
-    specs: ["Characters: 20x4", "Interface: I2C", "Backlight: Blue with White Text"]
-  },
-  {
-    id: "oled-display",
-    name: "0.96 inch OLED Display Module",
-    category: "Displays",
-    price: 3000,
-    image: "/images/oled.jpg",
-    shortDescription: "128x64 high-contrast monochrome OLED display.",
-    fullDescription: "Self-illuminating OLED display featuring sharp resolution and ultra-low power consumption.",
-    specs: ["Resolution: 128x64 pixels", "Interface: I2C / SPI", "Diagonal Size: 0.96 inch"]
-  },
-  {
-    id: "tft-screen",
-    name: "TFT Graphic Screen Display",
-    category: "Displays",
-    price: 6500,
-    image: "/images/tft-screen.jpg",
-    shortDescription: "Full-color TFT LCD graphic display module.",
-    fullDescription: "Vibrant color display module for user interfaces, graphics, and custom instrument panels.",
-    specs: ["Color Depth: 65K Colors", "Interface: SPI / Parallel", "Backlight: LED"]
-  },
-  {
-    id: "voltage-display",
-    name: "Digital Panel LED Voltage Display",
-    category: "Displays",
-    price: 1500,
-    image: "/images/voltage-display.jpg",
-    shortDescription: "Compact 3-digit DC voltmeter panel.",
-    fullDescription: "Directly measures and displays DC voltage on a bright 7-segment digital display.",
-    specs: ["Range: 0V - 30V DC", "Display: 3-Digit 0.28\" LED", "Accuracy: ±1%"]
-  },
-
-  // --- MOTORS, DRIVERS & ACTUATORS ---
-  {
-    id: "bldc-1000kv",
-    name: "A2212 1000KV Brushless Motor",
-    category: "Actuators & Motors",
-    price: 6000,
-    image: "/images/bldc-1000kv.jpg",
-    shortDescription: "High-efficiency 1000KV brushless motor for RC quadcopters and drones.",
-    fullDescription: "Powerful 3-phase brushless DC motor for high-thrust propeller setups and drone propulsion.",
-    specs: ["KV Rating: 1000KV", "Max Efficiency Current: 4-10A", "Shaft Diameter: 3.17mm"]
-  },
-  {
-    id: "esc-30a",
-    name: "30A Electronic Speed Controller (ESC)",
-    category: "Actuators & Motors",
-    price: 4500,
-    image: "/images/esc-30a.jpg",
-    shortDescription: "Speed controller module for brushless motors.",
-    fullDescription: "Heavy-duty 30A ESC with built-in BEC for driving brushless motors in RC planes and multirotors.",
-    specs: ["Continuous Current: 30A", "Burst Current: 40A", "BEC Output: 5V / 2A"]
-  },
-  {
-    id: "1245-propeller",
-    name: "1245 Propeller Pair",
-    category: "Actuators & Motors",
-    price: 1500,
-    image: "/images/1245-propeller.jpg",
-    shortDescription: "12x4.5 inch counter-rotating drone propeller pair.",
-    fullDescription: "High-rigidity CW/CCW propeller set optimized for 1000KV brushless motors.",
-    specs: ["Dimensions: 12x4.5 inches", "Rotation: CW & CCW pair", "Material: ABS Plastic"]
-  },
-  {
-    id: "servo-blue",
-    name: "SG90 Micro Servo Motor 9g",
-    category: "Actuators & Motors",
-    price: 1500,
-    image: "/images/servo-blue.jpg",
-    shortDescription: "Compact 9g micro servo motor with 180-degree rotation.",
-    fullDescription: "Standard 9-gram blue micro servo motor for steering, robotic arms, and mechanical control.",
-    specs: ["Weight: 9 grams", "Torque: 1.8 kg/cm", "Operating Voltage: 4.8V"]
-  },
-  {
-    id: "brushless-water-pump",
-    name: "12V Brushless DC Water Pump",
-    category: "Actuators & Motors",
-    price: 5500,
-    image: "/images/water-pump.jpg",
-    shortDescription: "Submersible brushless water circulation pump.",
-    fullDescription: "Low-noise DC water pump designed for fluid transfer, cooling systems, and automated irrigation.",
-    specs: ["Operating Voltage: 12V DC", "Flow Rate: 240L/H", "Waterproof Rating: IP68"]
-  },
-  {
-    id: "solenoid-valve",
-    name: "12V Electric Solenoid Valve",
-    category: "Actuators & Motors",
-    price: 4000,
-    image: "/images/solenoid-valve.jpg",
-    shortDescription: "Electromagnetic fluid flow control valve.",
-    fullDescription: "Normally closed 12V DC solenoid valve for automated water, air, or liquid flow control.",
-    specs: ["Voltage: 12V DC", "Port Size: 1/2 inch", "State: Normally Closed (NC)"]
-  },
-  {
-    id: "motor-driver-red-blue",
-    name: "Dual H-Bridge Motor Driver Module",
-    category: "Actuators & Motors",
+    id: 'lcd-1602',
+    name: 'LCD1602 Display Character Module',
+    category: 'Display Modules',
     price: 2500,
-    image: "/images/l298n.jpg",
-    shortDescription: "Dual channel motor driver for DC motors and steppers.",
-    fullDescription: "H-Bridge module capable of controlling direction and speed for two DC motors independently.",
-    specs: ["Driver Chip: L298N / Dual H-Bridge", "Max Current: 2A per channel", "Drive Voltage: 5V - 35V"]
+    shortDescription: '16x2 character alphanumeric display with blue backlight.',
+    fullDescription: 'Standard 16 column by 2 row alphanumeric liquid crystal display.',
+    specs: ['16x2 Character Grid', 'Blue Backlight', '5V Parallel/I2C Interface'],
+    image: '/LCD_1602.jpg'
   },
   {
-    id: "a4955-motor-driver",
-    name: "A4955 PWM Motor Driver Board",
-    category: "Actuators & Motors",
-    price: 3000,
-    image: "/images/a4955.jpg",
-    shortDescription: "Full-bridge DMOS PWM motor driver IC breakout board.",
-    fullDescription: "Designed for pulse-width modulated (PWM) control of DC motors with current limiting features.",
-    specs: ["Peak Output Current: ±3A", "Operating Voltage: up to 50V", "Protection: Overcurrent & Thermal"]
-  },
-  {
-    id: "small-fan",
-    name: "5V/12V DC Cooling Fan",
-    category: "Actuators & Motors",
-    price: 1000,
-    image: "/images/small-fan.jpg",
-    shortDescription: "Compact cooling fan for electronics enclosures.",
-    fullDescription: "Brushless DC fan for heat dissipation in microcontrollers, power supplies, and project boxes.",
-    specs: ["Dimensions: 40x40x10mm", "Voltage: 5V / 12V DC", "Bearing Type: Sleeve"]
-  },
-  {
-    id: "solenoid-locks",
-    name: "Electronic Solenoid Door Lock (Small / Big)",
-    category: "Actuators & Motors",
+    id: 'lcd-2004',
+    name: 'LCD2004 Character Display',
+    category: 'Display Modules',
     price: 4500,
-    image: "/images/solenoid-lock.jpg",
-    shortDescription: "12V electromagnetic cabinet and door lock latch.",
-    fullDescription: "Electromagnetic latch mechanism for keyless door entry, smart lockers, and security projects.",
-    specs: ["Voltage: 12V DC", "Current: 0.8A", "Stroke Length: 10mm"]
-  },
-
-  // --- RELAYS & SHIELDS ---
-  {
-    id: "4-relay-module",
-    name: "4-Channel Relay Module 5V",
-    category: "Relays & Shields",
-    price: 3000,
-    image: "/images/4-relay.jpg",
-    shortDescription: "4-channel isolated relay board for AC/DC switching.",
-    fullDescription: "Optocoupler isolated 4-channel relay capable of switching high voltage mains electronics.",
-    specs: ["Channels: 4", "Control Voltage: 5V DC", "Max Load: 10A 250VAC / 30VDC"]
+    shortDescription: '20x4 character alphanumeric LCD display.',
+    fullDescription: 'Large 20 column by 4 row character LCD module for extended display data.',
+    specs: ['20x4 Character Grid', '5V Power Supply'],
+    image: '/LCD2004.jpg'
   },
   {
-    id: "8-relay-module",
-    name: "8-Channel Relay Module 5V",
-    category: "Relays & Shields",
-    price: 5500,
-    image: "/images/8-relay.jpg",
-    shortDescription: "8-channel opto-isolated relay interface board.",
-    fullDescription: "Heavy-duty 8-channel relay array for industrial automation and smart home power routing.",
-    specs: ["Channels: 8", "Control Voltage: 5V DC", "Isolation: Optocoupler Protected"]
-  },
-  {
-    id: "cnc-shield",
-    name: "Arduino CNC Shield V3",
-    category: "Relays & Shields",
+    id: 'oled-096-display',
+    name: '0.96" I2C OLED Display Module',
+    category: 'Display Modules',
     price: 3500,
-    image: "/images/cnc-shield.jpg",
-    shortDescription: "Expansion shield for 3D printers and CNC engraving machines.",
-    fullDescription: "Arduino Uno expansion board supporting up to 4 stepper motor drivers (A4988 / DRV8825).",
-    specs: ["Compatibility: Arduino UNO", "Driver Slots: 4 Axes (X, Y, Z, A)", "Power: 12V-36V DC"]
+    shortDescription: '128x64 resolution blue/yellow graphic OLED screen.',
+    fullDescription: 'High contrast graphic OLED screen requiring no backlight with I2C communication.',
+    specs: ['Resolution: 128x64', 'Communication: I2C', 'Low power consumption'],
+    image: '/oled_display.jpg'
   },
   {
-    id: "sensor-shield",
-    name: "Arduino Sensor Shield V5.0",
-    category: "Relays & Shields",
-    price: 2500,
-    image: "/images/sensor-shield.jpg",
-    shortDescription: "Breakout expansion board for simplified sensor connectivity.",
-    fullDescription: "Expands Arduino pins into dedicated 3-pin SVG headers for direct servo and sensor plug-and-play.",
-    specs: ["Compatibility: Arduino UNO / Mega", "Headers: Digital, Analog, I2C, UART", "Buck Power Input: Included"]
+    id: 'tft-touch-display',
+    name: 'TFT Touch Screen Display',
+    category: 'Display Modules',
+    price: 9500,
+    shortDescription: 'Color graphic TFT display with touchscreen panel.',
+    fullDescription: 'Full color TFT touchscreen display for interactive user interfaces and graphical dashboards.',
+    specs: ['SPI/Parallel Interface', 'Resistive Touch Screen', 'Full Color Display'],
+    image: '/TFT_Touch_Display.jpg'
   },
   {
-    id: "i2c-module",
-    name: "PCF8574 I2C Backpack Adapter Module",
-    category: "Relays & Shields",
-    price: 1000,
-    image: "/images/i2c-module.jpg",
-    shortDescription: "Serial interface adapter for character LCD screens.",
-    fullDescription: "Converts standard 16-pin parallel LCDs into 2-pin I2C communication interface.",
-    specs: ["Chip: PCF8574", "Protocol: I2C", "Potentiometer: Contrast Adjust Built-in"]
-  },
-  {
-    id: "esp-extension-board",
-    name: "ESP32 / ESP8266 Expansion Breakout Board",
-    category: "Relays & Shields",
-    price: 3000,
-    image: "/images/esp-expansion.jpg",
-    shortDescription: "Terminal breakout board for ESP development modules.",
-    fullDescription: "Provides terminal screw blocks and expanded power supply rails for ESP32 and ESP8266 boards.",
-    specs: ["Compatibility: ESP32 30-Pin / NodeMCU", "Power Rails: 5V, 3.3V, GND", "Terminals: Screw Lock"]
-  },
-
-  // --- SENSORS ---
-  {
-    id: "ultrasound-hc-sr04",
-    name: "HC-SR04 Ultrasonic Distance Sensor",
-    category: "Sensors",
-    price: 1500,
-    image: "/images/hc-sr04.jpg",
-    shortDescription: "Ultrasonic rangefinder module for distance detection.",
-    fullDescription: "Measures distances non-contact from 2cm to 400cm using ultrasonic sonar waves.",
-    specs: ["Range: 2cm - 400cm", "Accuracy: 3mm", "Measuring Angle: 15°"]
-  },
-  {
-    id: "ov7670-camera",
-    name: "OV7670 VGA Camera Module",
-    category: "Sensors",
-    price: 3500,
-    image: "/images/ov7670.jpg",
-    shortDescription: "CMOS image sensor module for digital image capture.",
-    fullDescription: "640x480 VGA image capture camera module for microcontrollers and DSP processors.",
-    specs: ["Resolution: 640x480 (VGA)", "Format: Raw RGB / YUV", "Operating Voltage: 3.3V"]
-  },
-  {
-    id: "heart-rate-sensor",
-    name: "Pulse Heart Rate Sensor Module",
-    category: "Sensors",
-    price: 2500,
-    image: "/images/heart-rate.jpg",
-    shortDescription: "Optical biometric pulse and heart rate monitoring sensor.",
-    fullDescription: "Plug-and-play heart rate sensor for biometric data tracking in wearable electronics.",
-    specs: ["Type: Optical PPG", "Operating Voltage: 3V - 5V", "Output: Analog Signal"]
-  },
-  {
-    id: "max30010-max4495",
-    name: "MAX Health Biometric & Thermocouple Sensor Modules",
-    category: "Sensors",
-    price: 3500,
-    image: "/images/max-sensor.jpg",
-    shortDescription: "Precision biometric pulse-oximetry and temperature amplification module.",
-    fullDescription: "High-precision integrated IC breakout module for medical and industrial temperature telemetry.",
-    specs: ["Interface: I2C / Analog", "Precision: High Sensitivity", "Voltage: 3.3V"]
-  },
-  {
-    id: "soil-moisture-sensors",
-    name: "Soil Moisture Sensor (Resistive & Capacitive)",
-    category: "Sensors",
-    price: 1500,
-    image: "/images/soil-moisture.jpg",
-    shortDescription: "Corrosion-resistant soil water level detection sensor.",
-    fullDescription: "Measures soil volumetric water content for automated agricultural irrigation systems.",
-    specs: ["Types Available: Capacitive / Resistive", "Output: Analog + Digital", "Voltage: 3.3V - 5V"]
-  },
-  {
-    id: "ph-sensor",
-    name: "Analog pH Liquid Sensor Probe Kit",
-    category: "Sensors",
-    price: 14000,
-    image: "/images/ph-sensor.jpg",
-    shortDescription: "Water quality pH detection sensor with electrode probe.",
-    fullDescription: "Complete liquid pH monitoring kit designed for aquariums, hydroponics, and water testing.",
-    specs: ["Measuring Range: pH 0 - 14", "Response Time: ≤ 1 min", "Signal Output: Analog"]
-  },
-  {
-    id: "turbidity-sensor",
-    name: "Liquid Turbidity Sensor Module",
-    category: "Sensors",
-    price: 6500,
-    image: "/images/turbidity.jpg",
-    shortDescription: "Optical water clarity and suspended particle sensor.",
-    fullDescription: "Detects water quality by measuring light transmittance and scattering rate.",
-    specs: ["Output: Analog / Digital", "Response Time: < 500ms", "Voltage: 5V DC"]
-  },
-  {
-    id: "weight-sensors-loadcell",
-    name: "Load Cell Weight Sensor & HX711 Amplifier",
-    category: "Sensors",
-    price: 3500,
-    image: "/images/weight-sensor.jpg",
-    shortDescription: "Strain gauge load cell with 24-bit ADC amplifier module.",
-    fullDescription: "Precision force strain gauge load cell for electronic scales and weight measurement systems.",
-    specs: ["Capacities: Small (1-5kg) / Big (20-50kg)", "ADC Chip: HX711 24-bit", "Precision: High"]
-  },
-  {
-    id: "voltage-current-sensors",
-    name: "DC / AC Voltage & Current Sensor Modules",
-    category: "Sensors",
+    id: 'tm1637-display',
+    name: 'TM1637 4-Digit 7-Segment Display',
+    category: 'Display Modules',
     price: 2000,
-    image: "/images/current-sensor.jpg",
-    shortDescription: "Hall-effect based AC/DC voltage and current measurement modules.",
-    fullDescription: "Precision current transformer and voltage divider boards for power monitoring equipment.",
-    specs: ["Current Detection: up to 20A/30A", "Voltage Range: 0-25V DC / 0-250V AC", "Interface: Analog"]
-  },
-  {
-    id: "light-intensity-ldr",
-    name: "LDR Photoresistor & Light Intensity Sensor",
-    category: "Sensors",
-    price: 1000,
-    image: "/images/ldr-sensor.jpg",
-    shortDescription: "Ambient light detection sensor module.",
-    fullDescription: "Light-dependent resistor module for automatic night lighting and brightness detection.",
-    specs: ["Output: Analog + Digital Switch", "Sensitivity: Adjustable Potentiometer", "Voltage: 3.3V - 5V"]
-  },
-  {
-    id: "infrared-flame-sensor",
-    name: "Infrared Flame & Obstacle Sensor Module",
-    category: "Sensors",
-    price: 1200,
-    image: "/images/flame-sensor.jpg",
-    shortDescription: "IR optical flame and obstacle detection board.",
-    fullDescription: "Detects fire light sources (760nm - 1100nm) and proximity obstacles using infrared receivers.",
-    specs: ["Detection Angle: 60 degrees", "Response: Fast IR Transceiver", "Output: Digital/Analog"]
-  },
-  {
-    id: "bmp-sensor",
-    name: "BMP280 Barometric Pressure & Altitude Sensor",
-    category: "Sensors",
-    price: 2000,
-    image: "/images/bmp280.jpg",
-    shortDescription: "Digital environmental barometric pressure and temperature sensor.",
-    fullDescription: "Precision atmospheric pressure sensor for altitude calculation and weather tracking.",
-    specs: ["Pressure Range: 300 - 1100 hPa", "Interface: I2C / SPI", "Absolute Accuracy: ±1 hPa"]
-  },
-  {
-    id: "fingerprint-sensor",
-    name: "Optical Fingerprint Reader Module",
-    category: "Sensors",
-    price: 12500,
-    image: "/images/fingerprint.jpg",
-    shortDescription: "Biometric optical fingerprint scanner module.",
-    fullDescription: "All-in-one fingerprint processing module with onboard flash memory for enrollment and matching.",
-    specs: ["Interface: UART Serial", "Capacity: 120-300 Fingerprints", "Light Source: Green Optical"]
-  },
-  {
-    id: "gas-mq3-co2-sensors",
-    name: "Gas, MQ-3 Alcohol & CO2 Air Quality Sensors",
-    category: "Sensors",
-    price: 2500,
-    image: "/images/mq3.jpg",
-    shortDescription: "Air quality, alcohol vapor, and carbon dioxide detection sensors.",
-    fullDescription: "Gas detection module sensitive to hazardous gases, alcohol breath levels, or CO2 concentration.",
-    specs: ["Heater Voltage: 5V DC", "Gas Types: MQ Series / CO2", "Outputs: Analog & TTL Digital"]
-  },
-  {
-    id: "water-level-sensor",
-    name: "Liquid Depth / Water Level Detection Sensor",
-    category: "Sensors",
-    price: 1000,
-    image: "/images/water-sensor.jpg",
-    shortDescription: "Exposed parallel trace liquid level reader.",
-    fullDescription: "Analog printed wire depth sensor for rainfall measurement and water tank monitoring.",
-    specs: ["Detection Area: 40mm x 16mm", "Operating Current: < 20mA", "Voltage: 3V - 5V"]
-  },
-  {
-    id: "hall-effect-sensor",
-    name: "Hall Effect Magnetic Field Sensor",
-    category: "Sensors",
-    price: 1200,
-    image: "/images/hall-effect.jpg",
-    shortDescription: "Magnetic field proximity and speed sensor.",
-    fullDescription: "Detects presence of magnetic fields for motor RPM counting and non-contact limit switches.",
-    specs: ["Chip: Allegro 3144 / A3144", "Output: Open-Collector Digital", "Operating Voltage: 4.5V - 24V"]
-  },
-  {
-    id: "piezo-electric-sensor",
-    name: "Piezoelectric Vibration & Touch Sensor",
-    category: "Sensors",
-    price: 1000,
-    image: "/images/piezo.jpg",
-    shortDescription: "Vibration and knock transducer element.",
-    fullDescription: "Converts mechanical strain and impacts into measurable electrical voltage signals.",
-    specs: ["Sensor Type: Piezo Ceramic", "Output: Analog Voltage", "Mounting: Panel / Surface"]
+    shortDescription: 'Red 4-digit 7-segment digital clock display.',
+    fullDescription: 'Compact 4-digit numeric LED display driven via 2-wire serial protocol.',
+    specs: ['4-Digit Display', 'TM1637 Driver Chip', '2-Wire Serial Interface'],
+    image: '/TM1637.jpg'
   },
 
-  // --- POWER SUPPLIES & CONVERTERS ---
+  // --- MOTORS, DRIVERS & ROBOTICS KITS ---
   {
-    id: "buck-boost-converters",
-    name: "DC-DC Step Down (Buck) & Step Up (Boost) Converter Modules",
-    category: "Power Supplies",
+    id: 'sg90-servo-motor',
+    name: 'SG90 9g Micro Servo Motor',
+    category: 'Power & Motors',
     price: 2000,
-    image: "/images/buck-converter.jpg",
-    shortDescription: "High-efficiency adjustable voltage regulator board.",
-    fullDescription: "Step-up or step-down DC voltage conversion boards with onboard multi-turn potentiometers.",
-    specs: ["Conversion Efficiency: Up to 92%", "Adjustment: Onboard Potentiometer", "Max Current: 3A"]
+    shortDescription: 'Compact 180-degree rotation micro servo.',
+    fullDescription: 'Lightweight micro servo motor suited for robotic arms and steerable sensor mounts.',
+    specs: ['Stall Torque: 1.8 kg/cm', 'Operating Speed: 0.1 sec/60 degrees', 'Weight: 9 grams'],
+    image: '/servo_motor.jpg'
   },
   {
-    id: "breadboard-power-supply",
-    name: "MB102 Breadboard Power Supply Module 3.3V/5V",
-    category: "Power Supplies",
-    price: 1500,
-    image: "/images/breadboard-power.jpg",
-    shortDescription: "Dual 3.3V and 5V rail breadboard power supply board.",
-    fullDescription: "Plugs directly into standard breadboards to deliver dual 3.3V and 5V regulated DC supply rails.",
-    specs: ["Input Voltage: 6.5V - 12V DC / USB", "Output Voltage: 3.3V / 5V DC", "Max Current: 700mA"]
-  },
-  {
-    id: "xhw-1001",
-    name: "XHW-1001 Temperature Controller Switch Module",
-    category: "Power Supplies",
-    price: 4500,
-    image: "/images/xhw-1001.jpg",
-    shortDescription: "Digital thermostat temperature control switch board.",
-    fullDescription: "Programmable temperature controller relay module featuring LED display and NTC waterproof probe.",
-    specs: ["Control Range: -50°C to 110°C", "Relay Rating: 10A 250VAC", "Input Voltage: 12V DC / 220V AC"]
-  },
-  {
-    id: "power-supplies-5v-9v-12v",
-    name: "Regulated AC-DC Power Supply Adapter (5V / 9V / 12V)",
-    category: "Power Supplies",
-    price: 3000,
-    image: "/images/power-adapter.jpg",
-    shortDescription: "Wall power adapter for electronics and development boards.",
-    fullDescription: "Stable regulated DC power source equipped with standard 5.5mm x 2.1mm DC barrel connector.",
-    specs: ["Output Voltages: 5V / 9V / 12V", "Connector: 5.5mm Barrel Jack", "Protection: Overvoltage & Short Circuit"]
-  },
-  {
-    id: "18650-charger",
-    name: "18650 Lithium Battery Charger & Protection Module",
-    category: "Power Supplies",
-    price: 1000,
-    image: "/images/18650-charger.jpg",
-    shortDescription: "TP4056 Micro/Type-C USB Li-Ion charging module.",
-    fullDescription: "Single-cell lithium battery charger board with integrated battery protection circuitry.",
-    specs: ["Charge Voltage: 4.2V", "Max Charge Current: 1000mA", "Input Interface: USB"]
-  },
-
-  // --- KITS, ROBOTICS & HARDWARE ---
-  {
-    id: "4wd-robot-chassis",
-    name: "4WD Smart Robot Car Chassis Kit",
-    category: "Robotics & Kits",
+    id: '3-wheel-car-kit',
+    name: '3-Wheel Smart Robot Car Chassis Kit',
+    category: 'Power & Motors',
     price: 12000,
-    image: "/images/4wd-kit.jpg",
-    shortDescription: "4-Wheel drive acrylic chassis platform with gearmotors.",
-    fullDescription: "Complete robotic car base including motors, wheels, speed encoders, and acrylic mounting plates.",
-    specs: ["Motors: 4 DC Gearmotors", "Drive Type: 4 Wheel Drive", "Wheel Diameter: 66mm"]
+    shortDescription: 'Tri-wheel robotic platform with DC gear motors.',
+    fullDescription: 'Complete robotic chassis platform featuring two driven wheels and an omnidirectional caster wheel.',
+    specs: ['Dual DC Gear Motors', 'Acrylic Base Plate', 'Battery Holder Included'],
+    image: '/3_Wheel_Car_Kit.jpg'
   },
   {
-    id: "5-kit-robot",
-    name: "5-in-1 Educational Robotics Kit",
-    category: "Robotics & Kits",
-    price: 25000,
-    image: "/images/5-kit-robot.jpg",
-    shortDescription: "Multi-functional robotics prototyping assembly kit.",
-    fullDescription: "Comprehensive STEM robotics learning set for building obstacle avoidance, line-following, and remote control robots.",
-    specs: ["Projects Included: 5 Multi-robot configs", "Sensors Included: Line, Ultrasonic, IR", "Control: Microcontroller Included"]
+    id: '4-wheel-car-kit',
+    name: '4WD Smart Robot Car Chassis Kit',
+    category: 'Power & Motors',
+    price: 16000,
+    shortDescription: '4-wheel drive mobile robot chassis platform.',
+    fullDescription: 'Sturdy 4WD robot chassis equipped with 4 DC motors and speed encoder wheels.',
+    specs: ['4x DC Gear Motors', 'Encoders Included', 'Dual-layer acrylic frame'],
+    image: '/4_Wheel_Car_Kit.jpg'
   },
   {
-    id: "arduino-starter-kit",
-    name: "Complete Electronics & Arduino Starter Kit",
-    category: "Robotics & Kits",
+    id: '4dof-robotic-arm',
+    name: '4DOF Acrylic Robotic Arm Kit',
+    category: 'Power & Motors',
     price: 18000,
-    image: "/images/arduino-kit.jpg",
-    shortDescription: "Comprehensive component bundle for learning microcontroller programming.",
-    fullDescription: "Includes breadboard, jumper wires, resistors, LEDs, pushbuttons, sensors, and microcontroller board.",
-    specs: ["Components: 30+ Types", "Includes: Sensors, Actuators, Breadboard", "Storage Box: Included"]
+    shortDescription: '4 degrees-of-freedom desktop robot arm.',
+    fullDescription: 'Laser-cut acrylic mechanical arm kit for learning servo-based kinematics.',
+    specs: ['4 Degrees of Freedom', 'Laser-cut acrylic components', 'Servo mounting slots'],
+    image: '/4DOF.jpg'
+  },
+  {
+    id: 'drone-kit-complete',
+    name: 'Complete DIY Quadcopter Drone Kit',
+    category: 'Power & Motors',
+    price: 75000,
+    shortDescription: 'Full frame, motors, ESCs, and propellers kit.',
+    fullDescription: 'Comprehensive quadcopter assembly kit designed for learning drone hardware integration.',
+    specs: ['Quadcopter Frame', 'Brushless Motors & ESCs', 'Propeller Set Included'],
+    image: '/Complete_Drone_Kit.jpg'
+  },
+  {
+    id: 'pixhawk-flight-controller',
+    name: 'Pixhawk Flight Controller Kit',
+    category: 'Power & Motors',
+    price: 45000,
+    shortDescription: 'Advanced autopilot system for drones and autonomous vehicles.',
+    fullDescription: 'Open-hardware autopilot platform featuring 32-bit processing and multi-sensor stabilization.',
+    specs: ['32-bit STM32F427 Cortex M4', 'Integrated Gyro/Accel/Mag', 'ArduPilot & PX4 Compatible'],
+    image: '/Pixhawk_Flight_Controller_Kit.jpg'
+  },
+  {
+    id: 'flysky-remote',
+    name: 'FlySky Transmitter & Receiver Set',
+    category: 'Power & Motors',
+    price: 38000,
+    shortDescription: '2.4G 6-channel RC remote control set.',
+    fullDescription: 'Multi-channel radio control transmitter system for drones, cars, and boats.',
+    specs: ['2.4GHz AFHDS 2A system', '6 Channels', 'Receiver included'],
+    image: '/FlySky_Remote_Control.jpg'
   },
 
-  // --- TOOLS, CABLING & ACCESSORIES ---
+  // --- WIRING, KITS & CONSUMABLES ---
   {
-    id: "usb-to-ttl-esp-programmer",
-    name: "USB to TTL Serial / ESP Programmer (FT232 / CP2102)",
-    category: "Tools & Adapters",
-    price: 2500,
-    image: "/images/usb-ttl.jpg",
-    shortDescription: "Serial converter adapter for flashing microcontrollers.",
-    fullDescription: "USB-to-UART bridge adapter for programming ESP-01, Arduino Pro Mini, and microcontrollers.",
-    specs: ["Chipset: FT232RL / CP2102", "Voltage Output: 3.3V and 5V Toggle", "Interface: USB Standard"]
-  },
-  {
-    id: "65mm-jumper-wires",
-    name: "Breadboard Jumper Wires Pack (Solderless)",
-    category: "Tools & Adapters",
-    price: 1500,
-    image: "/images/jumper-wires.jpg",
-    shortDescription: "Multi-length flexible breadboard connecting cables.",
-    fullDescription: "Assorted male-to-male wire bundle for rapid breadboard circuit prototyping.",
-    specs: ["Quantity: 65 Wires Pack", "Types: Male-to-Male / Dupont", "Colors: Assorted"]
-  },
-  {
-    id: "joystick-keypad",
-    name: "Analog Joystick Module & Matrix Keypad",
-    category: "Tools & Adapters",
-    price: 1500,
-    image: "/images/joystick.jpg",
-    shortDescription: "User input controllers for menu navigation and robotics.",
-    fullDescription: "Dual-axis XY thumb joystick controller and membrane matrix keypad buttons.",
-    specs: ["Joystick Axes: X, Y Analog + Push Switch", "Keypad: 4x4 / 3x4 Matrix", "Operating Voltage: 5V"]
-  },
-  {
-    id: "traffic-light-module",
-    name: "LED Traffic Light Signal Module",
-    category: "Tools & Adapters",
-    price: 1200,
-    image: "/images/traffic-light.jpg",
-    shortDescription: "3-Color LED signal indicator module (Red/Yellow/Green).",
-    fullDescription: "Integrated traffic signal simulation display with 5mm LEDs for smart city and automation demonstrations.",
-    specs: ["LED Colors: Red, Yellow, Green", "Interface: Common Cathode", "Operating Voltage: 5V"]
-  },
-  {
-    id: "soldering-lead-kit",
-    name: "Soldering Iron Kit & Solder Wire",
-    category: "Tools & Adapters",
-    price: 8500,
-    image: "/images/soldering-kit.jpg",
-    shortDescription: "Temperature-controlled soldering iron kit with solder wire.",
-    fullDescription: "Essential workbench soldering kit with stand, desoldering pump, high-quality solder wire, and soldering iron.",
-    specs: ["Power: 60W Adjustable Temp", "Wire Alloy: Rosin Core 60/40", "Voltage: 220V AC"]
-  },
-  {
-    id: "multimeter",
-    name: "Digital Multimeter Tester",
-    category: "Tools & Adapters",
+    id: 'breadboard-kit',
+    name: 'Solderless Breadboard & Wire Starter Kit',
+    category: 'Wiring & Connectors',
     price: 5000,
-    image: "/images/multimeter.jpg",
-    shortDescription: "Handheld digital multimeter for measuring voltage, current, and resistance.",
-    fullDescription: "Versatile circuit testing device with LCD display, continuity buzzer, and transistor test functions.",
-    specs: ["Functions: AC/DC Voltage, DC Current, Resistance", "Features: Continuity Buzzer & Diode Test", "Battery: 9V Included"]
+    shortDescription: '830-point breadboard with jumper wire assortment.',
+    fullDescription: 'Essential rapid-prototyping kit containing an MB102 830-tie point breadboard and jumper wires.',
+    specs: ['830 Tie-Point Breadboard', 'Male-to-Male Jumpers Included'],
+    image: '/breadboard_kit.jpg'
   },
   {
-    id: "hardware-tools",
-    name: "Lab Workshop Hardware Tools (Crimping, Glue Gun, Screwdriver)",
-    category: "Tools & Adapters",
-    price: 4500,
-    image: "/images/workshop-tools.jpg",
-    shortDescription: "Professional laboratory assembly tools.",
-    fullDescription: "Essential workbench hand tools including wire terminal crimpers, hot melt glue gun, precision screwdrivers, and safety equipment.",
-    specs: ["Includes: Wire Strippers/Crimpers, Hot Glue Gun, Screwdriver Set", "Application: Electronics Fabrication"]
+    id: 'uv-starter-kit',
+    name: 'UV-LAB Standard Robotics & Microcontroller Starter Kit',
+    category: 'Wiring & Connectors',
+    price: 25000,
+    shortDescription: 'Complete educational electronic component starter box.',
+    fullDescription: 'Curated component box packed with sensors, LEDs, microcontrollers, wires, and modules.',
+    specs: ['Includes MCU Board', 'Assorted Sensors & LEDs', 'Storage Organizer Box'],
+    image: '/UVSTDStarterKit.jpg'
   },
   {
-    id: "white-lab-jacket",
-    name: "UV-LAB Technical Workshop Lab Coat",
-    category: "Tools & Adapters",
-    price: 10000,
-    image: "/images/lab-coat.jpg",
-    shortDescription: "Protective white laboratory lab jacket.",
-    fullDescription: "Heavy-duty protective white cotton lab coat for electronic workshop safety, chemical protection, and testing environments.",
-    specs: ["Material: Breathable Cotton Blend", "Color: White", "Pockets: 3 Front Pockets"]
+    id: 'pla-filament',
+    name: 'PLA 3D Printer Filament 1kg (1.75mm)',
+    category: 'Wiring & Connectors',
+    price: 18000,
+    shortDescription: '1.75mm premium PLA printing filament spool.',
+    fullDescription: 'High quality 1.75mm PLA filament spool for clean 3D printing of structural parts.',
+    specs: ['Diameter: 1.75mm', 'Weight: 1.0 kg Spool', 'Material: PLA'],
+    image: '/PLA_Filament.jpg'
+  },
+  {
+    id: 'abs-filament',
+    name: 'ABS 3D Printer Filament 1kg (1.75mm)',
+    category: 'Wiring & Connectors',
+    price: 20000,
+    shortDescription: 'Durable 1.75mm ABS filament spool.',
+    fullDescription: 'High-strength ABS plastic filament spool designed for heavy-duty mechanical enclosures.',
+    specs: ['Diameter: 1.75mm', 'Weight: 1.0 kg Spool', 'High heat resistance'],
+    image: '/ABS_Filament.jpg'
   }
 ];
