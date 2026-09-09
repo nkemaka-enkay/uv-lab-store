@@ -19,7 +19,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Dual-band GSM/GPRS wireless communication module.',
     fullDescription: 'Allows microcontrollers to send SMS messages, make phone calls, and transmit GPRS data.',
     specs: ['Dual-band 900/1800 MHz', 'UART Interface', 'SIM card slot'],
-    image: '/gsm-900a.jpg'
+    image: 'images/1.jpeg'
   },
   {
     id: 'gps-neo-7',
@@ -29,7 +29,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'High-precision satellite positioning GPS module.',
     fullDescription: 'Provides exact geographical coordinates, altitude, and speed via serial interface.',
     specs: ['UART Communication', 'Built-in active antenna', 'Eeprom for configuration storage'],
-    image: '/default.jpg'
+    image: 'images/2.jpg'
   },
   {
     id: 'gsm-900-big',
@@ -39,7 +39,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Industrial grade GSM 900 board with onboard power circuit.',
     fullDescription: 'Heavy-duty GSM modem module designed for stable long-term field deployment.',
     specs: ['High power efficiency', 'External antenna port', 'RS232/TTL compatible'],
-    image: '/default.jpg'
+    image: 'images/4.jpg'
   },
   {
     id: 'gsm-sim-800c',
@@ -49,7 +49,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Compact quad-band GSM/GPRS engine.',
     fullDescription: 'Low power consumption cell module for IoT and tracking applications.',
     specs: ['Quad-band 850/900/1800/1900MHz', 'Bluetooth 3.0 supported'],
-    image: '/sim800l.jpg'
+    image: 'images/6.webp'
   },
   {
     id: 'gsm-gps-gprs-sim-800',
@@ -59,7 +59,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'All-in-one cellular tracking and satellite board.',
     fullDescription: 'Combines GSM communication and GPS positioning into a single breakout board.',
     specs: ['Integrated GPS & GSM antenna ports', 'Micro SIM slot'],
-    image: '/sim800l.jpg'
+    image: 'images/7.webp'
   },
   {
     id: 'gsm-sim-800l',
@@ -69,7 +69,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Ultra-small cellular board for embedded IoT.',
     fullDescription: 'Micro-sized SIM module ideal for space-constrained electronics projects.',
     specs: ['Quad-band support', 'Operating Voltage: 3.7V - 4.2V'],
-    image: '/sim800l.jpg'
+    image: 'images/8.webp'
   },
   {
     id: 'esp-32',
@@ -79,7 +79,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: '32-bit dual-core microcontroller with wireless connectivity.',
     fullDescription: 'High performance microcontroller with built-in Wi-Fi and Bluetooth BLE.',
     specs: ['Dual-core Xtensa LX6', 'Integrated Wi-Fi & BLE', '30 GPIO pins'],
-    image: '/esp32.jpg'
+    image: 'images/11.jpg'
   },
   {
     id: 'esp-8266-nodemcu',
@@ -89,7 +89,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Popular open-source Wi-Fi development board.',
     fullDescription: 'Features built-in Wi-Fi and integrated micro-USB programmer.',
     specs: ['ESP-12E Chip', 'Wi-Fi 802.11 b/g/n', 'Micro-USB interface'],
-    image: '/esp8266.jpg'
+    image: 'images/12.jpg'
   },
   {
     id: 'arduino-mega',
@@ -99,7 +99,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'High pin-count microcontroller board for large projects.',
     fullDescription: 'Designed for complex projects requiring extra I/O lines, 54 digital pins, and 16 analog inputs.',
     specs: ['ATmega2560', '54 Digital Pins', '16 Analog Inputs'],
-    image: '/arduino_mega.jpg'
+    image: 'images/13.webp'
   },
   {
     id: 'esp-01-e',
@@ -109,7 +109,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Ultra-compact serial Wi-Fi transceiver.',
     fullDescription: 'Tiny Wi-Fi board designed to add wireless functionality to Arduino via serial commands.',
     specs: ['802.11 b/g/n Wi-Fi', 'Operating Voltage: 3.3V', '2 GPIO pins'],
-    image: '/default.jpg'
+    image: 'images/14.jpg'
   },
   {
     id: 'esp-32-cam',
@@ -119,7 +119,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Wi-Fi video camera development module.',
     fullDescription: 'Compact camera board combining ESP32 with an OV2640 camera and SD slot.',
     specs: ['OV2640 Camera', 'MicroSD Slot', 'Video streaming capabilities'],
-    image: '/esp32_cam.jpg'
+    image: 'images/15.jpg'
   },
   {
     id: 'nrfl24-l',
@@ -129,7 +129,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: '2.4GHz RF wireless communication module.',
     fullDescription: 'Cost-effective RF transceiver for point-to-point or multi-point wireless communication.',
     specs: ['2.4GHz ISM Band', '100m range', 'SPI Interface'],
-    image: '/default.jpg'
+    image: 'images/16.webp'
   },
   {
     id: 'esp-01-programmer',
@@ -139,7 +139,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'CH340G USB to serial programmer adapter for ESP-01.',
     fullDescription: 'Plugs ESP-01 directly into USB ports for effortless code flashing.',
     specs: ['CH340 USB Chip', 'Onboard 3.3V voltage regulator'],
-    image: '/default.jpg'
+    image: 'images/17.jpg'
   },
   {
     id: 'arduino-nano',
@@ -149,7 +149,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Breadboard-friendly mini ATmega328 board.',
     fullDescription: 'Compact development board with identical features to Arduino Uno.',
     specs: ['ATmega328P', 'Mini-USB port', 'Breadboard layout'],
-    image: '/Arduino_nano_with.jpg'
+    image: 'images/18.webp'
   },
   {
     id: 'nrfl24-long',
@@ -159,7 +159,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Long-range 2.4G RF module with external SMA antenna.',
     fullDescription: 'Features power amplifier and low noise amplifier for up to 1000 meters range.',
     specs: ['1000m range', 'SMA antenna included', '2.4GHz Frequency'],
-    image: '/default.jpg'
+    image: 'images/34.jpg'
   },
   {
     id: 'esp-extension-green',
@@ -169,7 +169,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Terminal breakout board for 30-pin ESP32.',
     fullDescription: 'Expands ESP32 GPIO pins into convenient screw terminals and pin headers.',
     specs: ['30-Pin Compatible', 'Screw terminal connections'],
-    image: '/default.jpg'
+    image: 'images/46.webp'
   },
   {
     id: 'usb-to-ttl-red',
@@ -179,7 +179,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'FT232 / CP2102 USB to UART converter module.',
     fullDescription: 'Used to program bare microcontrollers and communicate via serial terminal.',
     specs: ['3.3V and 5V selectable power', 'Tx/Rx Status LEDs'],
-    image: '/default.jpg'
+    image: 'images/47.jpg'
   },
   {
     id: 'esp32-extension',
@@ -189,7 +189,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Full breakout board with power jack for ESP32.',
     fullDescription: 'Simplifies wiring for industrial IoT automation projects.',
     specs: ['Dual-row headers', 'DC power jack input'],
-    image: '/default.jpg'
+    image: 'images/85.jpg'
   },
 
   // --- SENSORS & MODULES ---
@@ -201,7 +201,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: '640x480 resolution CMOS camera sensor.',
     fullDescription: 'Low cost image sensor for microcontrollers capable of capturing VGA video/stills.',
     specs: ['VGA 640x480', 'Standard SCCB interface'],
-    image: '/default.jpg'
+    image: 'images/37.jpg'
   },
   {
     id: 'heart-rate',
@@ -211,7 +211,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Optical heart rate biometrics sensor.',
     fullDescription: 'Plug-and-play PPG pulse sensor for biometrics and medical devices.',
     specs: ['Analog signal output', '3.3V/5V compatible'],
-    image: '/Fingerprint.jpg'
+    image: 'images/50.webp'
   },
   {
     id: 'capacitive-sensor-soil',
@@ -221,7 +221,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Corrosion-resistant soil moisture detection module.',
     fullDescription: 'Uses capacitive sensing rather than resistive to prevent sensor degradation.',
     specs: ['Analog output', 'Corrosion resistant PCB'],
-    image: '/Soil_Moisture.jpg'
+    image: 'images/51.webp'
   },
   {
     id: 'ph-sensor',
@@ -231,7 +231,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Liquid pH measurement probe with conditioning board.',
     fullDescription: 'Designed for monitoring water purity, aquaponics, and chemical analysis.',
     specs: ['BNC Connector Probe', 'pH 0-14 detection'],
-    image: '/pH_Sensor.jpg'
+    image: 'images/52.jpg'
   },
   {
     id: 'max4495-thermo',
@@ -241,7 +241,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'K-type thermocouple high-temperature sensor board.',
     fullDescription: 'Capable of measuring extreme temperatures up to 1024°C.',
     specs: ['0°C to 1024°C range', 'SPI digital interface'],
-    image: '/default.jpg'
+    image: 'images/53.jpg'
   },
   {
     id: 'turbidity-sensor',
@@ -251,7 +251,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Liquid suspended particle concentration sensor.',
     fullDescription: 'Optical sensor measuring water clarity for filtration and environmental tracking.',
     specs: ['Analog & Digital outputs', 'Waterproof optical probe'],
-    image: '/pH_Sensor.jpg'
+    image: 'images/54.jpg'
   },
   {
     id: 'big-weight-sensor',
@@ -261,7 +261,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Heavy-duty weight measuring sensor half-bridge.',
     fullDescription: 'Used in electronic scales to measure physical weight up to 50kg per sensor.',
     specs: ['50kg capacity', 'Half-bridge strain gauge'],
-    image: '/default.jpg'
+    image: 'images/55.jpg'
   },
   {
     id: 'dc-voltage-sensor',
@@ -271,7 +271,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Resistive divider voltage measurement module.',
     fullDescription: 'Allows 5V microcontrollers to read higher DC voltages safely.',
     specs: ['0-25V Range', '5:1 Voltage divider'],
-    image: '/default.jpg'
+    image: 'images/56.jpg'
   },
   {
     id: 'light-intensity-sensor',
@@ -281,7 +281,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'High-precision Lux light meter module.',
     fullDescription: 'Measures ambient brightness directly in Lux units over I2C.',
     specs: ['1-65535 Lux range', 'I2C Interface'],
-    image: '/default.jpg'
+    image: 'images/57.webp'
   },
   {
     id: 'max3001',
@@ -291,7 +291,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Biometric SpO2 blood oxygen and heart rate sensor.',
     fullDescription: 'Integrated pulse oximetry and heart-rate monitor module.',
     specs: ['I2C Interface', 'Low power optical solution'],
-    image: '/Fingerprint.jpg'
+    image: 'images/58.jpg'
   },
   {
     id: 'infrared',
@@ -301,7 +301,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Infrared proximity and line-following sensor.',
     fullDescription: 'Emits and detects IR light to register obstacles ahead.',
     specs: ['2cm-30cm range', 'Adjustable potentiometer sensitivity'],
-    image: '/Infrared_Sensor.jpg'
+    image: 'images/59.webp'
   },
   {
     id: 'ldr-sensor',
@@ -311,7 +311,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Light-dependent resistor sensor board.',
     fullDescription: 'Detects darkness and ambient light transitions with digital/analog output.',
     specs: ['Digital switch output', 'Analog resistance output'],
-    image: '/default.jpg'
+    image: 'images/60.webp'
   },
   {
     id: 'flame-sensor',
@@ -321,7 +321,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Fire and flame wave detector.',
     fullDescription: 'Responds to light sources between 760nm to 1100nm for fire alarms.',
     specs: ['60-degree detection angle', 'Digital/Analog dual output'],
-    image: '/Flame.jpg'
+    image: 'images/61.jpg'
   },
   {
     id: 'dc-current-sensor',
@@ -331,7 +331,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Hall-effect current sensor module.',
     fullDescription: 'Measures up to 20A DC or AC current through precise Hall voltage output.',
     specs: ['100mV/A sensitivity', 'Galvanic isolation'],
-    image: '/default.jpg'
+    image: 'images/62.jpg'
   },
   {
     id: 'small-weight-sensor',
@@ -341,7 +341,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Miniature precision weight strain gauge.',
     fullDescription: 'Compact load cell for precision desktop scale assemblies.',
     specs: ['1kg Max load', '4-wire bridge configuration'],
-    image: '/default.jpg'
+    image: 'images/63.jpg'
   },
   {
     id: 'bmp-sensor',
@@ -351,7 +351,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Environmental pressure, temperature and elevation sensor.',
     fullDescription: 'High precision atmospheric pressure sensor for weather stations and drones.',
     specs: ['I2C / SPI Interface', '300-1100 hPa pressure range'],
-    image: '/default.jpg'
+    image: 'images/64.webp'
   },
   {
     id: 'traffic-light',
@@ -361,7 +361,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Red / Yellow / Green mini LED traffic signal display.',
     fullDescription: 'Educational display board for traffic management prototypes.',
     specs: ['5V Compatible', '3 Discrete Color LEDs'],
-    image: '/default.jpg'
+    image: 'images/65.jpg'
   },
   {
     id: 'ac-current-sensor',
@@ -371,7 +371,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Clamp-on AC current transformer sensor.',
     fullDescription: 'Measures AC mains current safely without stripping wire insulation.',
     specs: ['0-100A AC range', '3.5mm jack output'],
-    image: '/default.jpg'
+    image: 'images/66.jpg'
   },
   {
     id: 'piezo-electric',
@@ -381,7 +381,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Vibration and physical shock detection board.',
     fullDescription: 'Converts mechanical stress or impacts into readable electrical voltage.',
     specs: ['Analog output proportional to shock', 'High sensitivity'],
-    image: '/default.jpg'
+    image: 'images/67.jpg'
   },
   {
     id: 'amplifier-weight',
@@ -391,7 +391,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: '24-Bit ADC module for weight strain gauges.',
     fullDescription: 'Amplifies weak load cell signals into high-resolution digital data.',
     specs: ['24-bit Analog-to-Digital converter', 'Two selectable differential channels'],
-    image: '/default.jpg'
+    image: 'images/68.webp'
   },
   {
     id: 'velocity-sensor',
@@ -401,7 +401,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Optical slot encoder for motor speed measurement.',
     fullDescription: 'Uses encoder disks to calculate RPM and motor speed.',
     specs: ['Slot width: 5mm', 'Digital output trigger'],
-    image: '/default.jpg'
+    image: 'images/69.jpg'
   },
   {
     id: 'distance-sensor',
@@ -411,7 +411,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Non-contact distance measurement module (2cm-400cm).',
     fullDescription: 'Provides precise distance measurement from 2cm to 400cm.',
     specs: ['2cm-400cm range', '5V DC operation'],
-    image: '/hc_sr04.jpg'
+    image: 'images/70.webp'
   },
   {
     id: 'rfid-sensor',
@@ -421,7 +421,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: '13.56MHz contactless RFID reader and tag kit.',
     fullDescription: 'Access control card reader using SPI interface.',
     specs: ['13.56MHz Frequency', 'SPI protocol', 'Keyfob + Card included'],
-    image: '/default.jpg'
+    image: 'images/71.jpg'
   },
   {
     id: 'fingerprint',
@@ -431,7 +431,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Biometric fingerprint scanner module.',
     fullDescription: 'Stores and matches fingerprints internally over UART serial connection.',
     specs: ['UART interface', 'Built-in memory flash'],
-    image: '/Fingerprint.jpg'
+    image: 'images/72.jpg'
   },
   {
     id: 'gas-sensor',
@@ -441,7 +441,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'LPG, Propane, and Smoke detection module.',
     fullDescription: 'Triggers safety alarms on gas leak detection.',
     specs: ['Analog & Digital Outputs'],
-    image: '/MQ_Gas.jpg'
+    image: 'images/73.jpg'
   },
   {
     id: 'mq3-sensor',
@@ -451,7 +451,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Ethanol and breathalyzer sensor module.',
     fullDescription: 'Measures alcohol concentration in the air.',
     specs: ['High sensitivity to alcohol', 'Fast response time'],
-    image: '/MQ_Gas.jpg'
+    image: 'images/74.jpg'
   },
   {
     id: 'water-sensor',
@@ -461,7 +461,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Raindrop and water level liquid depth sensor.',
     fullDescription: 'Measures water immersion depth via parallel conductive traces.',
     specs: ['Analog depth reading', 'Low power consumption'],
-    image: '/default.jpg'
+    image: 'images/75.jpg'
   },
   {
     id: 'resistive-soil-moisture',
@@ -471,7 +471,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Two-prong soil humidity probe with amplifier.',
     fullDescription: 'Basic soil moisture sensor for indoor potted plant watering.',
     specs: ['Adjustable sensitivity', 'Dual digital/analog output'],
-    image: '/Soil_Moisture.jpg'
+    image: 'images/76.png'
   },
   {
     id: 'co2-sensor',
@@ -481,7 +481,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Air quality, hazardous gas and CO2 sensor.',
     fullDescription: 'Monitors indoor air pollution, benzene, smoke, and CO2.',
     specs: ['Wide detection scope', 'Analog output'],
-    image: '/MQ_Gas.jpg'
+    image: 'images/77.jpg'
   },
   {
     id: 'hall-effect',
@@ -491,7 +491,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Magnetic field detector module.',
     fullDescription: 'Senses proximity of magnets for door contacts or rotational counters.',
     specs: ['Digital switch output', '3144 Hall element'],
-    image: '/default.jpg'
+    image: 'images/78.jpg'
   },
   {
     id: 'ultrasound',
@@ -501,7 +501,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'JSN-SR04T Sealed waterproof distance sensor.',
     fullDescription: 'Industrial outdoor distance measuring sensor for liquid tanks and vehicles.',
     specs: ['Sealed waterproof probe', '20cm-600cm range'],
-    image: '/hc_sr04.jpg'
+    image: 'images/88.jpg'
   },
 
   // --- DISPLAY MODULES ---
@@ -513,7 +513,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: '16x2 character display with 2-wire I2C interface.',
     fullDescription: 'Saves microcontroller pins by driving the 16x2 screen using only SCL/SDA pins.',
     specs: ['16x2 Characters', 'Pre-soldered I2C backpack', 'Address 0x27 / 0x3F'],
-    image: '/LCD_1602.jpg'
+    image: 'images/3.jpg'
   },
   {
     id: 'lcd2004-i2c',
@@ -523,7 +523,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: '20x4 character LCD screen with I2C module.',
     fullDescription: '4-line character display for expanded telemetry monitoring.',
     specs: ['20x4 Characters', 'I2C Backpack integrated'],
-    image: '/LCD2004.jpg'
+    image: 'images/5.jpg'
   },
   {
     id: 'oled-display',
@@ -533,7 +533,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'High contrast graphic OLED screen.',
     fullDescription: 'Crisp, self-illuminating display module requiring no backlight.',
     specs: ['Resolution: 128x64', 'I2C protocol', 'Blue / Yellow dual color'],
-    image: '/oled_display.jpg'
+    image: 'images/9.webp'
   },
   {
     id: 'voltage-display',
@@ -543,7 +543,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: '0.28" 3-Digit 0-100V LED Voltmeter.',
     fullDescription: 'Direct voltage reading display for custom bench supplies and battery packs.',
     specs: ['0-100V DC range', 'Red LED 7-segment'],
-    image: '/default.jpg'
+    image: 'images/10.jpg'
   },
   {
     id: 'tft-screen',
@@ -553,7 +553,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Full color 240x320 graphic display.',
     fullDescription: 'Supports custom GUI layouts and graphics rendering.',
     specs: ['240x320 resolution', 'ILI9341 controller chip', 'Integrated touch panel'],
-    image: '/TFT_Touch_Display.jpg'
+    image: 'images/80.jpg'
   },
 
   // --- POWER, MOTORS & ACTUATORS ---
@@ -565,7 +565,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'AC to DC wall adapter power supply.',
     fullDescription: 'Standard wall plug adapter for Arduino boards and development hardware.',
     specs: ['Output: 9V DC 1A', '5.5mm x 2.1mm barrel plug'],
-    image: '/default.jpg'
+    image: 'images/19.jpg'
   },
   {
     id: 'bldc-1000-kv',
@@ -575,7 +575,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'High-torque brushless DC motor for drones.',
     fullDescription: 'Standard motor choice for RC quadcopters and fixed-wing aircraft.',
     specs: ['1000KV rating', 'Max Efficiency Current: 4-10A'],
-    image: '/default.jpg'
+    image: 'images/20.webp'
   },
   {
     id: 'brushless-pump',
@@ -585,7 +585,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Mini 12V ultra-quiet water pump.',
     fullDescription: 'Designed for hydroponics, automatic plant watering, and liquid cooling systems.',
     specs: ['Flow rate: 240L/H', '12V DC input'],
-    image: '/default.jpg'
+    image: 'images/22.jpg'
   },
   {
     id: 'servo-blue',
@@ -595,7 +595,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Standard 180-degree rotation micro servo.',
     fullDescription: 'Versatile mini servo motor for robotic arm joints and steerable mounts.',
     specs: ['Torque: 1.8 kg-cm', 'Weight: 9 grams'],
-    image: '/servo_motor.jpg'
+    image: 'images/23.jpg'
   },
   {
     id: 'esc-30a',
@@ -605,7 +605,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Electronic speed controller for BLDC motors.',
     fullDescription: 'Regulates speed and power delivery for brushless drone motors.',
     specs: ['Continuous Current: 30A', 'BEC Output: 5V 2A'],
-    image: '/default.jpg'
+    image: 'images/24.webp'
   },
   {
     id: '1245-propreller',
@@ -615,7 +615,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: '12x4.5 inch high efficiency quadcopter blades.',
     fullDescription: 'Matched counter-rotating propeller pair for multirotor airframes.',
     specs: ['Size: 12x4.5 inches', 'Reinforced nylon plastic'],
-    image: '/default.jpg'
+    image: 'images/25.jpg'
   },
   {
     id: 'big-lock',
@@ -625,7 +625,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Industrial electronic latch lock assembly.',
     fullDescription: 'Electromagnetic door catch for biometric and keycard security doors.',
     specs: ['Operating Voltage: 12V DC', 'Stroke length: 10mm'],
-    image: '/default.jpg'
+    image: 'images/26.jpg'
   },
   {
     id: '4-relay-module',
@@ -635,7 +635,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Control high-voltage AC devices via logic signals.',
     fullDescription: 'Optocoupler isolated 4-channel relay board for mains automation.',
     specs: ['10A 250VAC / 30VDC rated', 'Active Low trigger'],
-    image: '/default.jpg'
+    image: 'images/27.jpg'
   },
   {
     id: 'red-motor-driver',
@@ -645,7 +645,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'High-power dual DC motor driver module.',
     fullDescription: 'Drives two DC motors or one 4-wire stepper motor with direction control.',
     specs: ['Peak Current: 2A per bridge', '5V-35V motor voltage range'],
-    image: '/default.jpg'
+    image: 'images/28.webp'
   },
   {
     id: 'xhw-1001',
@@ -655,7 +655,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Standalone thermostat switch module with probe.',
     fullDescription: 'Automatically switches load relays on/off based on set temperature limits.',
     specs: ['Range: -50°C to 110°C', 'High precision sensor probe included'],
-    image: '/default.jpg'
+    image: 'images/29.webp'
   },
   {
     id: 'small-fan',
@@ -665,7 +665,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: '40mm x 40mm enclosure ventilation fan.',
     fullDescription: 'Prevents overheating in project boxes and 3D printers.',
     specs: ['4010 Size', '12V DC operational input'],
-    image: '/default.jpg'
+    image: 'images/30.webp'
   },
   {
     id: 'small-lock',
@@ -675,7 +675,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Compact electronic latch catch.',
     fullDescription: 'Designed for small electronic lockers and safe box projects.',
     specs: ['12V DC pulse triggered', 'Compact footprint'],
-    image: '/default.jpg'
+    image: 'images/33.jpg'
   },
   {
     id: 'solenoid-valve',
@@ -685,7 +685,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: '1/2" Normally Closed electric fluid control valve.',
     fullDescription: 'Opens liquid passage electronically when 12V power is applied.',
     specs: ['1/2" Thread size', 'Normally Closed (NC) type'],
-    image: '/default.jpg'
+    image: 'images/38.webp'
   },
   {
     id: 'water-pump',
@@ -695,7 +695,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Logic-level mini water pump.',
     fullDescription: 'Can be powered directly from USB or 5V power supply.',
     specs: ['5V DC operation', 'Flow rate: 80-120L/H'],
-    image: '/default.jpg'
+    image: 'images/39.jpg'
   },
   {
     id: '8-relay-module',
@@ -705,7 +705,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: '8-channel isolated relay module.',
     fullDescription: 'Controls up to 8 independent AC power loads simultaneously.',
     specs: ['Optocoupler isolation', '10A maximum switching load'],
-    image: '/default.jpg'
+    image: 'images/40.jpg'
   },
   {
     id: 'blue-motor-driver',
@@ -715,7 +715,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Compact MX1508 / L9110S motor driver.',
     fullDescription: 'Low power dual-channel motor driver ideal for mini mobile robots.',
     specs: ['2-Channel H-bridge', '2V-10V operating voltage'],
-    image: '/default.jpg'
+    image: 'images/42.jpg'
   },
   {
     id: 'red-buck-converter',
@@ -725,7 +725,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Adjustable DC-DC voltage reducer.',
     fullDescription: 'Reduces higher DC input voltage down to stable circuit logic level.',
     specs: ['Input: 4.5V-40V', 'Output: 1.25V-35V Adjustable'],
-    image: '/UVSTDStarterKit.jpg'
+    image: 'images/43.jpg'
   },
   {
     id: 'boost-buck-blue-green',
@@ -735,7 +735,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Universal DC boost-buck regulator.',
     fullDescription: 'Maintains fixed output voltage even when battery input fluctuates above or below set point.',
     specs: ['Constant output voltage stability', 'High efficiency'],
-    image: '/UVSTDStarterKit.jpg'
+    image: 'images/44.webp'
   },
   {
     id: 'a4955',
@@ -745,7 +745,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Industrial PWM current-controlled DC motor IC module.',
     fullDescription: 'Provides precise motor braking and directional torque control.',
     specs: ['Peak 50V / 3A capability', 'Integrated overcurrent protection'],
-    image: '/default.jpg'
+    image: 'images/48.webp'
   },
   {
     id: 'buck-boost-small',
@@ -755,7 +755,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Ultra-small MP1584 EN buck converter.',
     fullDescription: 'Tiny step-down power regulator for space-critical custom builds.',
     specs: ['3A Output Max', 'Up to 92% efficiency'],
-    image: '/UVSTDStarterKit.jpg'
+    image: 'images/49.jpg'
   },
   {
     id: '4wd',
@@ -765,7 +765,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: '4-Wheel Drive robotic chassis platform.',
     fullDescription: 'Includes acrylic chassis, 4 DC gear motors, wheels, and speed encoders.',
     specs: ['4x Gearbox DC Motors', 'Dual acrylic deck plates'],
-    image: '/4_Wheel_Car_Kit.jpg'
+    image: 'images/79.webp'
   },
   {
     id: '5-kit-robot',
@@ -775,7 +775,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Multi-functional mechanical robot platform package.',
     fullDescription: 'Complete builder kit for obstacle avoidance, line tracking, and remote steering.',
     specs: ['Includes chassis, motors, and sensors'],
-    image: '/4DOF.jpg'
+    image: 'images/84.jpg'
   },
   {
     id: '5v-power',
@@ -785,7 +785,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Standard 5V USB / DC jack power brick.',
     fullDescription: 'Clean 5V power source for single board computers and development kits.',
     specs: ['Output: 5V DC 2000mA'],
-    image: '/default.jpg'
+    image: 'images/86.jpg'
   },
   {
     id: '12v',
@@ -795,7 +795,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: '12V heavy-duty DC adapter block.',
     fullDescription: 'Powers motor drivers, high power LED arrays, and water pumps.',
     specs: ['12V DC 3A output', 'Short circuit protected'],
-    image: '/default.jpg'
+    image: 'images/87.jpeg'
   },
 
   // --- WIRING, CONNECTORS, TOOLS & ACCESSORIES ---
@@ -807,7 +807,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Flexible male-to-male wire bundle.',
     fullDescription: 'Multi-length wire leads with durable molded pin ends for quick breadboarding.',
     specs: ['65 wires assortment', 'Male-to-Male connectors'],
-    image: '/breadboard_kit.jpg'
+    image: 'images/21.jpg'
   },
   {
     id: 'cnc-shield',
@@ -817,7 +817,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Expansion board for 3D printers and CNC routers.',
     fullDescription: 'Holds up to 4 stepper motor drivers (A4988 / DRV8825) for 3-axis CNC machines.',
     specs: ['GRBL Compatible', '4-Axis support (X, Y, Z, A)'],
-    image: '/default.jpg'
+    image: 'images/31.jpg'
   },
   {
     id: 'breadboard-power-supply',
@@ -827,7 +827,7 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Pluggable dual-rail breadboard regulator.',
     fullDescription: 'Plugs directly into standard breadboards to output regulated 3.3V or 5V rail power.',
     specs: ['Input: DC Jack / USB', 'Dual output switchable rails'],
-    image: '/breadboard_kit.jpg'
+    image: 'images/32.jpg'
   },
   {
     id: 'sensor-shield',
@@ -837,136 +837,136 @@ export const EQUIPMENT_LIST: Equipment[] = [
     shortDescription: 'Full pin breakout expansion shield for Arduino.',
     fullDescription: 'Provides dedicated 3-pin VCC/GND/Signal headers for every single pin.',
     specs: ['Buckled Bluetooth & SD interface ports', 'Servo power terminal'],
-    image: '/default.jpg'
+    image: 'images/35.jpg'
   },
   {
     id: 'i2c-module',
     name: 'PCF8574 LCD I2C Backpack Adapter',
     category: 'Wiring & Connectors',
-    price: 1200,
-    shortDescription: 'Serial interface board for character displays.',
-    fullDescription: 'Converts parallel 1602/2004 LCD screens to simple 2-wire I2C protocol.',
-    specs: ['PCF8574 Chip', 'Potentiometer contrast adjustment'],
-    image: '/default.jpg'
-  },
-  {
-    id: 'joystick',
-    name: 'Dual-Axis PS2 Joystick Module',
-    category: 'Wiring & Connectors',
     price: 1500,
-    shortDescription: 'Thumbstick controller with pushbutton switch.',
-    fullDescription: 'Provides 2-axis analog directional readings plus a tactile click button.',
-    specs: ['Dual X-Y analog outputs', 'Integrated push button switch'],
-    image: '/default.jpg'
+    shortDescription: 'Serial adapter board for 1602 and 2004 character LCD screens.',
+    fullDescription: 'Converts parallel character displays to 2-wire I2C protocol.',
+    specs: ['PCF8574 Chip', 'Potentiometer for contrast adjustment'],
+    image: 'images/36.webp'
   },
   {
     id: 'sd-card-module',
-    name: 'MicroSD Card Read/Write SPI Module',
+    name: 'MicroSD Card Reader Module',
     category: 'Wiring & Connectors',
     price: 1800,
-    shortDescription: 'Storage expansion board for logging system data.',
-    fullDescription: 'Allows microcontrollers to read and write files on standard MicroSD cards.',
+    shortDescription: 'SPI interface MicroSD card logging module.',
+    fullDescription: 'Enables data logging and file read/write operations for microcontrollers.',
     specs: ['SPI Interface', 'Onboard 3.3V level conversion chip'],
-    image: '/default.jpg'
+    image: 'images/45.webp'
+  },
+  {
+    id: 'joystick',
+    name: 'Dual-Axis XY Thumb Joystick Module',
+    category: 'Wiring & Connectors',
+    price: 1500,
+    shortDescription: 'Analog 2-axis joystick with integral push button.',
+    fullDescription: 'Provides smooth proportional directional control for gamepads and robotics.',
+    specs: ['2 Analog Potentiometers (X/Y)', '1 Pushbutton Switch'],
+    image: 'images/41.jpg'
   },
   {
     id: 'keypad',
-    name: '4x4 Matrix Membrane Keypad',
+    name: '4x4 Matrix Membrane Switch Keypad',
     category: 'Wiring & Connectors',
     price: 1800,
-    shortDescription: '16-button entry keyboard panel.',
-    fullDescription: 'Tactile input matrix panel for PIN code entry and security locks.',
-    specs: ['16 Keys Matrix', 'Adhesive backing'],
-    image: '/default.jpg'
+    shortDescription: '16-Button numeric and character entry keypad.',
+    fullDescription: 'Thin flexible keypad used for digital security passcodes and PIN entry systems.',
+    specs: ['16 Buttons (0-9, A-D, *, #)', '8-Pin female header connector'],
+    image: 'images/81.jpg'
   },
   {
     id: 'soldering-lead',
-    name: 'High Quality Rosin Core Solder Wire',
+    name: '60/40 Rosin Core Soldering Wire Spool',
     category: 'Wiring & Connectors',
-    price: 2500,
-    shortDescription: 'Fast-melting electronic soldering wire spool.',
-    fullDescription: 'Contains rosin flux core for clean, reliable electrical connections.',
-    specs: ['60/40 alloy mix', '0.8mm diameter spool'],
-    image: '/default.jpg'
+    price: 3500,
+    shortDescription: 'High purity electronics soldering wire.',
+    fullDescription: 'Smooth flow soldering tin with flux core for circuit assembly and wire splicing.',
+    specs: ['60% Tin / 40% Lead', 'Integrated rosin flux core'],
+    image: 'images/82.webp'
   },
   {
     id: 'arduino-kit',
-    name: 'Ultimate Arduino Component Starter Kit',
+    name: 'Complete Starter Electronics Component Kit',
     category: 'Wiring & Connectors',
-    price: 25000,
-    shortDescription: 'Comprehensive educational component box set.',
-    fullDescription: 'Contains Arduino Uno, breadboard, LEDs, resistors, sensors, and jumper leads.',
-    specs: ['Includes organizer case', 'Over 30 component types'],
-    image: '/UVSTDStarterKit.jpg'
+    price: 15000,
+    shortDescription: 'Assorted component set with LEDs, resistors, and breadboard.',
+    fullDescription: 'Includes basic passive components, jumpers, buttons, and display parts for beginners.',
+    specs: ['Breadboard included', 'Assorted resistors & LEDs'],
+    image: 'images/83.jpg'
   },
   {
     id: '18650-charger',
-    name: 'TP4056 18650 Lithium Battery Charger Board',
+    name: 'TP4056 1S Lithium Battery Charging Board',
     category: 'Wiring & Connectors',
     price: 1000,
-    shortDescription: '1A Li-ion micro-USB battery charging board.',
-    fullDescription: 'Features dual protection ICs against overcharging and short circuits.',
-    specs: ['1A charging rate', 'Micro-USB port', 'Battery protection built-in'],
-    image: '/UVSTDStarterKit.jpg'
+    shortDescription: '1A Li-ion / 18650 battery charger module with protection.',
+    fullDescription: 'Charges single-cell lithium batteries via Micro USB / Type-C with battery protection circuit.',
+    specs: ['Input: 5V USB', 'Charge Cut-off Voltage: 4.2V ±1%'],
+    image: 'images/89.webp'
   },
   {
     id: 'multimeter',
-    name: 'Digital Precision Multimeter Tester',
+    name: 'Digital Handheld Multimeter (XL830L / DT830B)',
     category: 'Wiring & Connectors',
-    price: 8500,
-    shortDescription: 'Voltage, Current, Resistance, and Continuity tester.',
-    fullDescription: 'Essential bench tool for troubleshooting electronic circuits.',
-    specs: ['Backlit LCD', 'Includes test probe leads'],
-    image: '/breadboard_kit.jpg'
+    price: 4500,
+    shortDescription: 'Essential electronics diagnostic measuring meter.',
+    fullDescription: 'Measures AC/DC voltage, DC current, resistance, diode continuity, and transistors.',
+    specs: ['Probes included', 'Continuity buzzer switch'],
+    image: 'images/90.jpg'
   },
   {
     id: 'soldering-kit',
     name: '60W Adjustable Temperature Soldering Iron Kit',
     category: 'Wiring & Connectors',
-    price: 12000,
-    shortDescription: 'Complete soldering station set with accessories.',
-    fullDescription: 'Includes temperature controlled iron, stand, tips, wire, and desoldering pump.',
-    specs: ['60W Power', 'Adjustable 200°C - 450°C'],
-    image: '/breadboard_kit.jpg'
+    price: 8500,
+    shortDescription: 'Complete soldering iron setup with stand and tips.',
+    fullDescription: 'Temperature-controlled heating element with stand, pump, and extra soldering tips.',
+    specs: ['Adjustable: 200°C - 450°C', 'Power: 60W'],
+    image: 'images/91.jpg'
   },
   {
     id: 'crimping-tool',
-    name: 'Ratchet Wire Terminal Crimping Tool',
+    name: 'Network Cable & Terminal Wire Crimping Tool',
     category: 'Wiring & Connectors',
-    price: 10500,
-    shortDescription: 'Heavy duty wire crimper for Dupont and JST pins.',
-    fullDescription: 'Ensures solid mechanical crimps on custom connector cables.',
-    specs: ['AWG 28-18 capacity', 'Ratchet mechanism'],
-    image: '/default.jpg'
+    price: 6500,
+    shortDescription: 'Heavy-duty wire stripper and terminal ratchet crimper.',
+    fullDescription: 'Precision crimper for RJ45 network connectors and insulated wire lugs.',
+    specs: ['Ratchet design mechanism', 'Multi-gauge stripping notches'],
+    image: 'images/92.jpg'
   },
   {
     id: 'glue-gun',
-    name: '40W Electric Hot Melt Glue Gun',
+    name: '20W Electric Hot Melt Glue Gun Kit',
     category: 'Wiring & Connectors',
-    price: 4500,
-    shortDescription: 'Fast heating adhesive applicator.',
-    fullDescription: 'Ideal for mounting sensors and insulating exposed connections in prototypes.',
-    specs: ['40W Power', 'Includes glue sticks'],
-    image: '/default.jpg'
+    price: 3500,
+    shortDescription: 'Desktop hot melt applicator gun with glue sticks.',
+    fullDescription: 'Fast heating gun for securing components, insulating solder connections, and prototyping.',
+    specs: ['Power: 20W', 'PTC Heating system'],
+    image: 'images/93.jpg'
   },
   {
     id: 'screw-driver',
-    name: 'Precision Screwdriver Set (31-in-1)',
+    name: 'Precision Electronics Screwdriver Set',
     category: 'Wiring & Connectors',
-    price: 5000,
-    shortDescription: 'Magnetic mini bit set for electronics.',
-    fullDescription: 'Covers Torx, Phillips, and Flat bits for taking apart small electronics.',
-    specs: ['31 magnetic bits', 'Ergonomic handle'],
-    image: '/default.jpg'
+    price: 4500,
+    shortDescription: 'Multi-bit magnetic micro screwdriver kit.',
+    fullDescription: 'Essential tool set for repairing laptops, mobile phones, drones, and project enclosures.',
+    specs: ['Magnetic bit holder', 'Chrome-vanadium steel bits'],
+    image: 'images/94.jpg'
   },
   {
     id: 'white-lab-jacket',
-    name: 'UV-LAB Branded Technical White Lab Coat',
+    name: 'Anti-Static White Protective Lab Coat',
     category: 'Wiring & Connectors',
-    price: 15000,
-    shortDescription: 'Professional cotton workshop protective coat.',
-    fullDescription: 'Heavy-duty cotton laboratory coat with embroidered UV-LAB logo.',
-    specs: ['High grade cotton material', 'Multiple utility pockets'],
-    image: '/default.jpg'
+    price: 8500,
+    shortDescription: 'Standard engineering lab and workshop jacket.',
+    fullDescription: 'Protective white coat designed for laboratory environments and workshop maintenance work.',
+    specs: ['Unisex sizing', 'Front button closure with pockets'],
+    image: 'images/95.jpg'
   }
 ];
