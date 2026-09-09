@@ -236,17 +236,18 @@ export default function EquipmentCatalog() {
                 className="group bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between"
               >
                 <div onClick={() => setSelectedItem(item)} className="cursor-pointer">
-                  <div className="relative w-full h-48 bg-gray-50 overflow-hidden flex items-center justify-center p-4">
+                  {/* Full-bleed Image Container */}
+                  <div className="relative w-full h-52 bg-gray-50 overflow-hidden">
                     <img
                       src={item.image}
                       alt={item.name}
-                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300 pointer-events-none"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 pointer-events-none"
                       onError={(e) => {
                         (e.target as HTMLImageElement).src =
                           'https://via.placeholder.com/300x200?text=UV-LAB+Equipment';
                       }}
                     />
-                    <div className="absolute top-2 right-2 bg-black/60 text-white p-1.5 rounded-full opacity-80 group-hover:opacity-100">
+                    <div className="absolute top-2 right-2 bg-black/60 text-white p-1.5 rounded-full opacity-80 group-hover:opacity-100 z-10">
                       <Info className="w-4 h-4" />
                     </div>
                   </div>
@@ -419,11 +420,11 @@ export default function EquipmentCatalog() {
               </button>
 
               <div className="flex flex-col md:flex-row gap-6">
-                <div className="w-full md:w-1/2 h-56 md:h-auto relative rounded-xl overflow-hidden bg-gray-50 p-4 flex items-center justify-center">
+                <div className="w-full md:w-1/2 h-56 md:h-auto relative rounded-xl overflow-hidden bg-gray-50 flex items-center justify-center">
                   <img
                     src={selectedItem.image}
                     alt={selectedItem.name}
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover"
                     onError={(e) => {
                       (e.target as HTMLImageElement).src =
                         'https://via.placeholder.com/300x200?text=UV-LAB+Equipment';
