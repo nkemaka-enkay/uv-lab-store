@@ -12,6 +12,16 @@ export interface Equipment {
 export const EQUIPMENT_LIST: Equipment[] = [
   // --- MICROCONTROLLERS & DEVELOPMENT BOARDS ---
   {
+    id: 'arduino-uno',
+    name: 'Arduino Uno R3',
+    category: 'Microcontrollers',
+    price: 6500,
+    shortDescription: 'Standard ATmega328P microcontroller development board.',
+    fullDescription: 'The reference microcontroller board for electronic prototyping and automation projects.',
+    specs: ['ATmega328P MCU', '14 Digital I/O Pins', '6 Analog Inputs', 'Operating Voltage: 5V'],
+    image: 'images/arduino_uno.jpg'
+  },
+  {
     id: 'gsm-900a',
     name: 'GSM 900a Module',
     category: 'Microcontrollers',
