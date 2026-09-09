@@ -17,8 +17,8 @@ export default function EquipmentCatalog() {
   const [selectedCategory, setSelectedCategory] = useState<string>('All Products');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
-  // Replace with your WhatsApp phone number with country code (e.g. 237 for Cameroon)
-  const WHATSAPP_NUMBER = '237600000000';
+  // Active Cameroon WhatsApp Phone Number
+  const WHATSAPP_NUMBER = '237674319822';
 
   const navCategories = [
     'All Products',
@@ -65,7 +65,7 @@ export default function EquipmentCatalog() {
 
   const handleAddToCart = (item: Equipment, e?: React.MouseEvent) => {
     if (e) e.stopPropagation();
-    
+
     setCart((prevCart) => {
       const existingIndex = prevCart.findIndex((i) => i.id === item.id);
       if (existingIndex > -1) {
@@ -101,7 +101,9 @@ export default function EquipmentCatalog() {
   const totalCartItems = cart.reduce((sum, item) => sum + item.quantity, 0);
   const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-  const generateWhatsAppUrl = () => {
+  const handleWhatsAppCheckout = () => {
+    if (cart.length === 0) return;
+
     const title = "*NEW EQUIPMENT ORDER - UV-LAB STORE*\n-----------------------------------\n";
     const items = cart
       .map(
@@ -113,7 +115,10 @@ export default function EquipmentCatalog() {
       .join('\n\n');
     const total = `\n-----------------------------------\n*TOTAL AMOUNT:* ${totalPrice.toLocaleString()} FCFA`;
 
-    return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(title + items + total)}`;
+    const fullText = encodeURIComponent(title + items + total);
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${fullText}`;
+
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -144,8 +149,9 @@ export default function EquipmentCatalog() {
             <Search className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-blue-300 pointer-events-none" />
           </div>
 
-          {/* Cart Pill Button - Opens Cart Drawer */}
+          {/* Cart Pill Button - Toggles Cart Drawer */}
           <button
+            type="button"
             onClick={() => setIsCartOpen(true)}
             className="bg-[#00529b] text-white px-5 py-2 rounded-full flex items-center gap-2 shadow hover:bg-[#003d75] cursor-pointer transition-colors"
           >
@@ -182,6 +188,7 @@ export default function EquipmentCatalog() {
             return (
               <button
                 key={category}
+                type="button"
                 onClick={() => setSelectedCategory(category)}
                 className={`px-4 py-1.5 rounded-md text-sm font-medium whitespace-nowrap transition-all ${
                   isActive
@@ -211,6 +218,7 @@ export default function EquipmentCatalog() {
           <div className="text-center py-16 bg-gray-50 rounded-2xl border border-dashed border-gray-200">
             <p className="text-gray-500 text-lg">No equipment found matching your selection.</p>
             <button
+              type="button"
               onClick={() => {
                 setSelectedCategory('All Products');
                 setSearchQuery('');
@@ -304,6 +312,7 @@ export default function EquipmentCatalog() {
                     <h2 className="text-xl font-bold text-gray-900">Your Cart</h2>
                   </div>
                   <button
+                    type="button"
                     onClick={() => setIsCartOpen(false)}
                     className="p-1 text-gray-400 hover:text-gray-700 rounded-lg"
                   >
@@ -331,6 +340,7 @@ export default function EquipmentCatalog() {
                           </p>
                           <div className="flex items-center gap-2 mt-2">
                             <button
+                              type="button"
                               onClick={() => updateQuantity(item.id, -1)}
                               className="w-7 h-7 bg-gray-100 text-gray-800 rounded flex items-center justify-center hover:bg-gray-200"
                             >
@@ -340,6 +350,7 @@ export default function EquipmentCatalog() {
                               {item.quantity}
                             </span>
                             <button
+                              type="button"
                               onClick={() => updateQuantity(item.id, 1)}
                               className="w-7 h-7 bg-gray-100 text-gray-800 rounded flex items-center justify-center hover:bg-gray-200"
                             >
@@ -352,6 +363,7 @@ export default function EquipmentCatalog() {
                             {(item.price * item.quantity).toLocaleString()} FCFA
                           </p>
                           <button
+                            type="button"
                             onClick={() => removeFromCart(item.id)}
                             className="text-xs text-red-500 hover:text-red-700 mt-2 flex items-center gap-1 justify-end ml-auto"
                           >
@@ -370,14 +382,13 @@ export default function EquipmentCatalog() {
                     <span>Total Amount:</span>
                     <span className="text-[#004a87]">{totalPrice.toLocaleString()} FCFA</span>
                   </div>
-                  <a
-                    href={generateWhatsAppUrl()}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full block text-center bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-bold transition shadow-md"
+                  <button
+                    type="button"
+                    onClick={handleWhatsAppCheckout}
+                    className="w-full block text-center bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-bold transition shadow-md cursor-pointer"
                   >
                     Place Order on WhatsApp
-                  </a>
+                  </button>
                 </div>
               )}
             </motion.div>
