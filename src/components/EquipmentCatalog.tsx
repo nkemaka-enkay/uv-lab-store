@@ -2,17 +2,24 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ShoppingCart, Check, Info, Search } from 'lucide-react';
+import { X, ShoppingCart, Check, Info, Search, Trash2, Plus, Minus } from 'lucide-react';
 import { Equipment, EQUIPMENT_LIST } from '@/data/equipment';
+
+export interface CartItem extends Equipment {
+  quantity: number;
+}
 
 export default function EquipmentCatalog() {
   const [selectedItem, setSelectedItem] = useState<Equipment | null>(null);
-  const [cart, setCart] = useState<Equipment[]>([]);
+  const [cart, setCart] = useState<CartItem[]>([]);
+  const [isCartOpen, setIsCartOpen] = useState<boolean>(false);
   const [addedId, setAddedId] = useState<string | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string>('All Products');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
-  // Fixed categories matching your target layout design
+  // Replace with your WhatsApp phone number with country code (e.g. 237 for Cameroon)
+  const WHATSAPP_NUMBER = '237600000000';
+
   const navCategories = [
     'All Products',
     'Microcontrollers',
@@ -22,7 +29,6 @@ export default function EquipmentCatalog() {
     'Wiring & Connectors',
   ];
 
-  // Helper mapping function to group equipment data into navigation tabs
   const filterByNavCategory = (item: Equipment, category: string) => {
     if (category === 'All Products') return true;
 
@@ -48,7 +54,6 @@ export default function EquipmentCatalog() {
     return item.category === category;
   };
 
-  // Filter list by both selected navigation category and search term
   const filteredEquipment = EQUIPMENT_LIST.filter((item) => {
     const matchesCategory = filterByNavCategory(item, selectedCategory);
     const matchesSearch =
@@ -60,9 +65,55 @@ export default function EquipmentCatalog() {
 
   const handleAddToCart = (item: Equipment, e?: React.MouseEvent) => {
     if (e) e.stopPropagation();
-    setCart((prev) => [...prev, item]);
+    
+    setCart((prevCart) => {
+      const existingIndex = prevCart.findIndex((i) => i.id === item.id);
+      if (existingIndex > -1) {
+        const updated = [...prevCart];
+        updated[existingIndex].quantity += 1;
+        return updated;
+      }
+      return [...prevCart, { ...item, quantity: 1 }];
+    });
+
     setAddedId(item.id);
     setTimeout(() => setAddedId(null), 1500);
+  };
+
+  const updateQuantity = (id: string, delta: number) => {
+    setCart((prevCart) =>
+      prevCart
+        .map((item) => {
+          if (item.id === id) {
+            const newQty = item.quantity + delta;
+            return newQty > 0 ? { ...item, quantity: newQty } : null;
+          }
+          return item;
+        })
+        .filter((item): item is CartItem => item !== null)
+    );
+  };
+
+  const removeFromCart = (id: string) => {
+    setCart((prevCart) => prevCart.filter((item) => item.id !== id));
+  };
+
+  const totalCartItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+  const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+  const generateWhatsAppUrl = () => {
+    const title = "*NEW EQUIPMENT ORDER - UV-LAB STORE*\n-----------------------------------\n";
+    const items = cart
+      .map(
+        (item, index) =>
+          `${index + 1}. *${item.name}*\n   Qty: ${item.quantity} | Unit: ${item.price.toLocaleString()} FCFA\n   Subtotal: ${(
+            item.price * item.quantity
+          ).toLocaleString()} FCFA`
+      )
+      .join('\n\n');
+    const total = `\n-----------------------------------\n*TOTAL AMOUNT:* ${totalPrice.toLocaleString()} FCFA`;
+
+    return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(title + items + total)}`;
   };
 
   return (
@@ -93,16 +144,19 @@ export default function EquipmentCatalog() {
             <Search className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-blue-300 pointer-events-none" />
           </div>
 
-          {/* Cart Pill Button */}
-          <div className="bg-[#00529b] text-white px-5 py-2 rounded-full flex items-center gap-2 shadow hover:bg-[#003d75] cursor-pointer transition-colors">
+          {/* Cart Pill Button - Opens Cart Drawer */}
+          <button
+            onClick={() => setIsCartOpen(true)}
+            className="bg-[#00529b] text-white px-5 py-2 rounded-full flex items-center gap-2 shadow hover:bg-[#003d75] cursor-pointer transition-colors"
+          >
             <ShoppingCart className="w-4 h-4" />
             <span className="font-semibold text-sm">Cart</span>
-            {cart.length > 0 && (
+            {totalCartItems > 0 && (
               <span className="ml-1 bg-white text-[#00529b] font-bold text-xs px-2 py-0.5 rounded-full">
-                {cart.length}
+                {totalCartItems}
               </span>
             )}
-          </div>
+          </button>
         </div>
 
         {/* Mobile Search Input */}
@@ -144,7 +198,6 @@ export default function EquipmentCatalog() {
 
       {/* Main Content Area */}
       <main className="max-w-7xl mx-auto px-4 py-8">
-        {/* Category Header with Item Count */}
         <div className="mb-8 flex items-baseline gap-3">
           <h1 className="text-3xl font-extrabold text-[#003366]">
             {selectedCategory}
@@ -154,7 +207,6 @@ export default function EquipmentCatalog() {
           </span>
         </div>
 
-        {/* Equipment Grid */}
         {filteredEquipment.length === 0 ? (
           <div className="text-center py-16 bg-gray-50 rounded-2xl border border-dashed border-gray-200">
             <p className="text-gray-500 text-lg">No equipment found matching your selection.</p>
@@ -175,7 +227,6 @@ export default function EquipmentCatalog() {
                 key={item.id}
                 className="group bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-200 flex flex-col justify-between"
               >
-                {/* Clickable Area */}
                 <div onClick={() => setSelectedItem(item)} className="cursor-pointer">
                   <div className="relative w-full h-48 bg-gray-50 overflow-hidden flex items-center justify-center p-4">
                     <img
@@ -205,7 +256,6 @@ export default function EquipmentCatalog() {
                   </div>
                 </div>
 
-                {/* Footer */}
                 <div className="p-4 border-t border-gray-100 flex items-center justify-between bg-gray-50/50">
                   <span className="text-base font-bold text-gray-900">
                     {item.price.toLocaleString()} FCFA
@@ -235,6 +285,105 @@ export default function EquipmentCatalog() {
           </div>
         )}
       </main>
+
+      {/* Slide-over Cart Drawer */}
+      <AnimatePresence>
+        {isCartOpen && (
+          <div className="fixed inset-0 z-50 flex justify-end bg-black/60 backdrop-blur-sm">
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              className="w-full max-w-md bg-white h-full p-6 flex flex-col justify-between shadow-2xl"
+            >
+              <div>
+                <div className="flex justify-between items-center border-b pb-4">
+                  <div className="flex items-center gap-2">
+                    <ShoppingCart className="w-5 h-5 text-[#004a87]" />
+                    <h2 className="text-xl font-bold text-gray-900">Your Cart</h2>
+                  </div>
+                  <button
+                    onClick={() => setIsCartOpen(false)}
+                    className="p-1 text-gray-400 hover:text-gray-700 rounded-lg"
+                  >
+                    <X className="w-6 h-6" />
+                  </button>
+                </div>
+
+                <div className="mt-4 space-y-4 max-h-[65vh] overflow-y-auto pr-1">
+                  {cart.length === 0 ? (
+                    <div className="text-center py-16 text-gray-500">
+                      <ShoppingCart className="w-12 h-12 mx-auto text-gray-300 mb-3" />
+                      <p className="text-base font-semibold text-gray-700">Your cart is empty</p>
+                      <p className="text-sm mt-1">Add items from the catalog to place an order.</p>
+                    </div>
+                  ) : (
+                    cart.map((item) => (
+                      <div
+                        key={item.id}
+                        className="flex items-center justify-between border-b pb-3 gap-3"
+                      >
+                        <div className="flex-1">
+                          <h3 className="font-semibold text-gray-900 text-sm">{item.name}</h3>
+                          <p className="text-xs text-gray-500">
+                            {item.price.toLocaleString()} FCFA each
+                          </p>
+                          <div className="flex items-center gap-2 mt-2">
+                            <button
+                              onClick={() => updateQuantity(item.id, -1)}
+                              className="w-7 h-7 bg-gray-100 text-gray-800 rounded flex items-center justify-center hover:bg-gray-200"
+                            >
+                              <Minus className="w-3 h-3" />
+                            </button>
+                            <span className="text-sm font-bold w-4 text-center">
+                              {item.quantity}
+                            </span>
+                            <button
+                              onClick={() => updateQuantity(item.id, 1)}
+                              className="w-7 h-7 bg-gray-100 text-gray-800 rounded flex items-center justify-center hover:bg-gray-200"
+                            >
+                              <Plus className="w-3 h-3" />
+                            </button>
+                          </div>
+                        </div>
+                        <div className="text-right">
+                          <p className="font-bold text-sm text-gray-900">
+                            {(item.price * item.quantity).toLocaleString()} FCFA
+                          </p>
+                          <button
+                            onClick={() => removeFromCart(item.id)}
+                            className="text-xs text-red-500 hover:text-red-700 mt-2 flex items-center gap-1 justify-end ml-auto"
+                          >
+                            <Trash2 className="w-3.5 h-3.5" /> Remove
+                          </button>
+                        </div>
+                      </div>
+                    ))
+                  )}
+                </div>
+              </div>
+
+              {cart.length > 0 && (
+                <div className="border-t pt-4">
+                  <div className="flex justify-between font-bold text-lg mb-4 text-gray-900">
+                    <span>Total Amount:</span>
+                    <span className="text-[#004a87]">{totalPrice.toLocaleString()} FCFA</span>
+                  </div>
+                  <a
+                    href={generateWhatsAppUrl()}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full block text-center bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-bold transition shadow-md"
+                  >
+                    Place Order on WhatsApp
+                  </a>
+                </div>
+              )}
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
 
       {/* Item Detail Modal */}
       <AnimatePresence>
